@@ -51,7 +51,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
+            scroll-padding-top: 100px;
         }
 
         body {
@@ -87,7 +87,7 @@
         }
 
         /* ============================================
-           NAVEGACIÓN PREMIUM CON GLASSMORPHISM
+           NAVEGACIÓN PREMIUM CON LOGO GRANDE
         ============================================ */
         nav {
             position: fixed;
@@ -95,7 +95,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 14, 26, 0.7);
+            background: rgba(10, 14, 26, 0.85);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid var(--border-color);
@@ -110,14 +110,14 @@
         .nav-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 12px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo-nav {
-            height: 48px;
+            height: 70px;
             width: auto;
             filter: drop-shadow(0 0 12px rgba(0, 245, 212, 0.4));
             transition: var(--transition-smooth);
@@ -125,7 +125,7 @@
 
         .logo-nav:hover {
             filter: drop-shadow(0 0 20px rgba(0, 245, 212, 0.6));
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .btn-nav {
@@ -136,7 +136,7 @@
             background: var(--gradient-secondary);
             color: white;
             text-decoration: none;
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
@@ -167,11 +167,317 @@
         }
 
         /* ============================================
-           HERO SECTION CON EFECTOS PREMIUM
+           SLIDER PREMIUM
+        ============================================ */
+        .slider-section {
+            padding: 80px 0 40px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            padding: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .slider-icon {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0, 245, 212, 0.3);
+        }
+
+        .slider-icon svg {
+            width: 64px;
+            height: 64px;
+            stroke: white;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .slider-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slider-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .slider-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--accent-neon);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .slider-btn:hover {
+            background: rgba(0, 245, 212, 0.1);
+            border-color: var(--accent-neon);
+            transform: scale(1.1);
+        }
+
+        .slider-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 12px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-color);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .slider-dot.active {
+            background: var(--accent-neon);
+            box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+        }
+
+        /* ============================================
+           SECCIÓN TALLERISTA ASTROMYKOS
+        ============================================ */
+        .tallerista-section {
+            padding: 100px 0;
+            background: var(--bg-dark);
+        }
+
+        .tallerista-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tallerista-card {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 48px;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(19, 26, 44, 0.8) 0%, rgba(10, 14, 26, 0.95) 100%);
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tallerista-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 245, 212, 0.03) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .tallerista-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tallerista-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(0, 245, 212, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .tallerista-image:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-neon);
+            box-shadow: 0 25px 70px rgba(0, 245, 212, 0.3);
+        }
+
+        .tallerista-badge {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            background: var(--gradient-primary);
+            color: var(--bg-dark);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(0, 245, 212, 0.4);
+        }
+
+        .tallerista-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tallerista-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 245, 212, 0.08);
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            color: var(--accent-neon);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .tallerista-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tallerista-role {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .tallerista-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .tallerista-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .credential-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .credential-tag svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent-neon);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .btn-tallerista {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--accent-neon);
+            text-decoration: none;
+            padding: 14px 32px;
+            border: 2px solid var(--accent-neon);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-tallerista:hover {
+            background: var(--accent-neon);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 245, 212, 0.4);
+        }
+
+        .btn-tallerista svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ============================================
+           HERO SECTION
         ============================================ */
         header {
             position: relative;
-            padding: 160px 0 100px;
+            padding: 180px 0 100px;
             text-align: center;
             overflow: hidden;
             background: var(--gradient-mesh);
@@ -196,7 +502,6 @@
             50% { transform: translate(-20px, -20px); }
         }
 
-        /* Grid de fondo animado */
         header::after {
             content: '';
             position: absolute;
@@ -377,7 +682,7 @@
         }
 
         /* ============================================
-           GRID DE MÓDULOS CON CSS GRID
+           GRID DE MÓDULOS
         ============================================ */
         .modules-grid {
             display: grid;
@@ -641,11 +946,6 @@
             height: 200%;
             background: radial-gradient(circle, rgba(0, 245, 212, 0.03) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
 
         .premium-title {
@@ -976,13 +1276,60 @@
         /* ============================================
            RESPONSIVE
         ============================================ */
+        @media (max-width: 968px) {
+            .tallerista-card {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 32px;
+            }
+
+            .tallerista-image-wrapper {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .slider-slide {
+                flex-direction: column;
+                text-align: center;
+                gap: 32px;
+                padding: 32px;
+            }
+
+            .slider-icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            .slider-icon svg {
+                width: 56px;
+                height: 56px;
+            }
+
+            .slider-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
-                padding: 120px 0 60px;
+                padding: 140px 0 60px;
             }
 
             section {
                 padding: 60px 0;
+            }
+
+            .nav-wrapper {
+                padding: 10px 16px;
+            }
+
+            .logo-nav {
+                height: 55px;
+            }
+
+            .btn-nav {
+                padding: 8px 16px;
+                font-size: 13px;
             }
 
             .modules-grid {
@@ -1027,6 +1374,14 @@
             .register-box {
                 padding: 48px 24px;
             }
+
+            .slider-container {
+                padding: 0 50px;
+            }
+
+            .tallerista-content h2 {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1034,17 +1389,16 @@
                 padding: 0 16px;
             }
 
-            .nav-wrapper {
-                padding: 12px 16px;
+            .slider-slide {
+                padding: 24px;
             }
 
-            .logo-nav {
-                height: 40px;
+            .slider-content h3 {
+                font-size: 1.3rem;
             }
 
-            .btn-nav {
-                padding: 8px 16px;
-                font-size: 13px;
+            .slider-content p {
+                font-size: 1rem;
             }
         }
 
@@ -1082,6 +1436,67 @@
         </div>
     </nav>
 
+    <!-- Slider Section -->
+    <section class="slider-section">
+        <div class="container">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slider-slide">
+                            <div class="slider-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div class="slider-content">
+                                <h3>Soberanía Digital</h3>
+                                <p>Toma el control total de tu presencia digital. Aprende a proteger tus datos, configurar tu privacidad y navegar con seguridad en el mundo digital.</p>
+                            </div>
+                        </div>
+                        <div class="slider-slide">
+                            <div class="slider-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="slider-content">
+                                <h3>Marca Personal</h3>
+                                <p>Descubre y proyecta tu identidad única. Tu experiencia de vida es un activo invaluable que merece ser compartido con el mundo.</p>
+                            </div>
+                        </div>
+                        <div class="slider-slide">
+                            <div class="slider-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <div class="slider-content">
+                                <h3>Conexión Global</h3>
+                                <p>Conecta con el mundo desde tu esencia. Aprende a usar herramientas digitales para compartir tu sabiduría y legado con las nuevas generaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-btn" id="nextBtn" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
     <header role="banner">
         <div class="container">
@@ -1107,6 +1522,65 @@
             </div>
         </div>
     </header>
+
+    <!-- Tallerista Astromykos -->
+    <section class="tallerista-section">
+        <div class="container">
+            <div class="tallerista-container">
+                <div class="tallerista-card reveal">
+                    <div class="tallerista-image-wrapper">
+                        <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1" alt="Astromykos - Tallerista" class="tallerista-image">
+                        <span class="tallerista-badge">Tallerista Principal</span>
+                    </div>
+                    <div class="tallerista-content">
+                        <span class="tallerista-label">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            Tu Guía en este Viaje
+                        </span>
+                        <h2>Astromykos</h2>
+                        <p class="tallerista-role">Piloto de la nave de Lost Astronauta SpA</p>
+                        <p>Más de 25 años de trayectoria en las industrias creativas. Tutor validado por el Ministerio de Educación de Chile.</p>
+                        
+                        <div class="tallerista-credentials">
+                            <span class="credential-tag">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                25+ años experiencia
+                            </span>
+                            <span class="credential-tag">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Mineduc Validado
+                            </span>
+                            <span class="credential-tag">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                                Industrias Creativas
+                            </span>
+                        </div>
+
+                        <a href="https://lostastronauta.org/about/" target="_blank" rel="noopener noreferrer" class="btn-tallerista">
+                            Conoce más sobre Astromykos
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Módulos -->
     <section id="modulos">
@@ -1488,8 +1962,62 @@
         </div>
     </footer>
 
-    <!-- JavaScript para animaciones -->
+    <!-- JavaScript para slider y animaciones -->
     <script>
+        // Slider functionality
+        const sliderTrack = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('sliderDots');
+        const slides = sliderTrack.children;
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+
+        function updateSlider() {
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-play slider
+        let autoPlay = setInterval(nextSlide, 6000);
+
+        // Pause on hover
+        sliderTrack.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        sliderTrack.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(nextSlide, 6000);
+        });
+
         // Scroll reveal animations
         const revealElements = document.querySelectorAll('.reveal');
         
