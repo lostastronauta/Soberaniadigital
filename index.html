@@ -7,7 +7,7 @@
     
     <!-- Primary Meta Tags -->
     <title>Taller de Soberanía Digital | Academia de la Vida & Lost Astronauta</title>
-    <meta name="title" content="Taller de Soberanía Digital | Academia de la Vida & Lost Astronauta">
+    <meta name="title" content="Taller de Soberanía Digital | Academia de la Vida">
     <meta name="description" content="Programa gratuito de marca personal y soberanía digital para adultos mayores. 3 semanas de formación presencial y online en Centro Cultural Matta Sur, Santiago.">
     <meta name="keywords" content="soberanía digital, adultos mayores, marca personal, taller gratuito, Santiago, Matta Sur, identidad digital, seguridad digital, Academia de la Vida, Lost Astronauta">
     <meta name="author" content="Lost Astronauta SpA - Academia de la Vida">
@@ -57,9 +57,7 @@
             --text-muted: #94a3b8;
             --text-dim: #64748b;
             --border-color: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(0, 245, 212, 0.3);
             --shadow-glow: 0 0 40px rgba(0, 245, 212, 0.15);
-            --shadow-blue: 0 0 40px rgba(58, 134, 255, 0.2);
             --gradient-primary: linear-gradient(135deg, #00f5d4 0%, #3a86ff 100%);
             --gradient-secondary: linear-gradient(135deg, #8338ec 0%, #3a86ff 100%);
             --gradient-mesh: radial-gradient(at 0% 0%, rgba(58, 134, 255, 0.15) 0px, transparent 50%),
@@ -68,9 +66,7 @@
                              radial-gradient(at 0% 100%, rgba(255, 0, 110, 0.05) 0px, transparent 50%);
             --font-display: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         *, *::before, *::after {
@@ -81,7 +77,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 120px;
+            scroll-padding-top: 100px;
         }
 
         body {
@@ -94,9 +90,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ============================================
-           UTILIDADES
-        ============================================ */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -104,20 +97,8 @@
             padding: 0 24px;
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
         /* ============================================
-           NAVEGACIÓN PREMIUM CON LOGO GRANDE
+           NAVEGACIÓN
         ============================================ */
         nav {
             position: fixed;
@@ -197,233 +178,304 @@
         }
 
         /* ============================================
-           SLIDER DE IMÁGENES CON LIGHTBOX
+           HERO SECTION
         ============================================ */
-        .slider-section {
-            padding: 100px 0 60px;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-        }
-
-        .slider-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .slider-header {
+        header {
+            position: relative;
+            padding: 180px 0 100px;
             text-align: center;
-            margin-bottom: 48px;
+            overflow: hidden;
+            background: var(--gradient-mesh);
         }
 
-        .slider-header h2 {
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 245, 212, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(58, 134, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(131, 56, 236, 0.06) 0%, transparent 50%);
+            animation: meshMove 20s ease infinite;
+        }
+
+        @keyframes meshMove {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, -20px); }
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge-premium {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 245, 212, 0.08);
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            color: var(--accent-neon);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.15);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 212, 0.15); }
+            50% { box-shadow: 0 0 30px rgba(0, 245, 212, 0.3); }
+        }
+
+        header h1 {
             font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 700;
-            margin-bottom: 12px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 16px;
             background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .slider-header p {
+        .subtitle-hero {
+            font-family: var(--font-display);
+            color: var(--accent-blue);
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .desc-hero {
+            max-width: 700px;
+            margin: 0 auto 40px;
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.8;
         }
 
-        .slider-track {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 32px;
-        }
-
-        .slider-image-wrapper {
+        .btn-action {
             position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 16/9;
-            border: 2px solid var(--border-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-primary);
+            color: var(--bg-dark);
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 32px rgba(0, 245, 212, 0.3);
             transition: var(--transition-smooth);
+            overflow: hidden;
         }
 
-        .slider-image-wrapper:hover {
-            border-color: var(--accent-neon);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 245, 212, 0.2);
-        }
-
-        .slider-image-wrapper img {
+        .btn-action::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: var(--transition-smooth);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
         }
 
-        .slider-image-wrapper:hover img {
-            transform: scale(1.05);
+        .btn-action:hover::before {
+            left: 100%;
         }
 
-        .slider-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            display: flex;
-            align-items: flex-end;
-            padding: 16px;
-            opacity: 0;
-            transition: var(--transition-smooth);
+        .btn-action:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 245, 212, 0.5);
         }
 
-        .slider-image-wrapper:hover .slider-image-overlay {
-            opacity: 1;
+        .btn-action svg {
+            transition: transform var(--transition-smooth);
         }
 
-        .slider-image-overlay span {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .slider-nav {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--border-color);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .slider-dot.active {
-            background: var(--accent-neon);
-            box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
-        }
-
-        /* LIGHTBOX */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid var(--accent-neon);
-            color: var(--accent-neon);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-            z-index: 2001;
-        }
-
-        .lightbox-close:hover {
-            background: var(--accent-neon);
-            color: var(--bg-dark);
-            transform: rotate(90deg);
-        }
-
-        .lightbox-close svg {
-            width: 24px;
-            height: 24px;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .lightbox-image {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid var(--accent-neon);
-            color: var(--accent-neon);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-        }
-
-        .lightbox-nav:hover {
-            background: var(--accent-neon);
-            color: var(--bg-dark);
-        }
-
-        .lightbox-nav.prev {
-            left: 20px;
-        }
-
-        .lightbox-nav.next {
-            right: 20px;
-        }
-
-        .lightbox-nav svg {
-            width: 24px;
-            height: 24px;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .lightbox-counter {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .btn-action:hover svg {
+            transform: translateX(4px);
         }
 
         /* ============================================
-           SECCIÓN TALLERISTA ASTROMYKOS
+           SECCIONES GENERALES
         ============================================ */
-        .tallerista-section {
-            padding: 100px 0;
-            background: var(--bg-dark);
+        section {
+            padding: 80px 0;
+            position: relative;
         }
 
-        .tallerista-container {
-            max-width: 1000px;
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(58, 134, 255, 0.08);
+            border: 1px solid rgba(58, 134, 255, 0.2);
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            max-width: 600px;
             margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           ¿PARA QUIÉN ES? (NUEVA SECCIÓN)
+        ============================================ */
+        .para-quien-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .para-quien-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .para-quien-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-smooth);
+        }
+
+        .para-quien-card:hover {
+            border-color: rgba(0, 245, 212, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+        }
+
+        .para-quien-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .para-quien-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: rgba(0, 245, 212, 0.08);
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .para-quien-card:hover .para-quien-icon {
+            background: rgba(0, 245, 212, 0.15);
+            border-color: rgba(0, 245, 212, 0.4);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .para-quien-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent-neon);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .para-quien-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .para-quien-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           TALLERISTA ASTROMYKOS
+        ============================================ */
+        .tallerista-section {
+            background: var(--bg-dark);
         }
 
         .tallerista-card {
@@ -592,427 +644,142 @@
         }
 
         /* ============================================
-           HERO SECTION
+           FORMATO + MÓDULOS FUSIONADOS
         ============================================ */
-        header {
-            position: relative;
-            padding: 200px 0 100px;
-            text-align: center;
-            overflow: hidden;
-            background: var(--gradient-mesh);
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 245, 212, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(58, 134, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(131, 56, 236, 0.06) 0%, transparent 50%);
-            animation: meshMove 20s ease infinite;
-        }
-
-        @keyframes meshMove {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-20px, -20px); }
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .badge-premium {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.3);
-            color: var(--accent-neon);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-            box-shadow: 0 0 20px rgba(0, 245, 212, 0.15);
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 212, 0.15); }
-            50% { box-shadow: 0 0 30px rgba(0, 245, 212, 0.3); }
-        }
-
-        header h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 700;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle-hero {
-            font-family: var(--font-display);
-            color: var(--accent-blue);
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 500;
-            margin-bottom: 24px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .desc-hero {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            line-height: 1.8;
-        }
-
-        .btn-action {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--gradient-primary);
-            color: var(--bg-dark);
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 8px 32px rgba(0, 245, 212, 0.3);
-            transition: var(--transition-smooth);
-            overflow: hidden;
-        }
-
-        .btn-action::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s;
-        }
-
-        .btn-action:hover::before {
-            left: 100%;
-        }
-
-        .btn-action:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(0, 245, 212, 0.5);
-        }
-
-        .btn-action svg {
-            transition: transform var(--transition-smooth);
-        }
-
-        .btn-action:hover svg {
-            transform: translateX(4px);
-        }
-
-        /* ============================================
-           SECCIONES GENERALES
-        ============================================ */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(58, 134, 255, 0.08);
-            border: 1px solid rgba(58, 134, 255, 0.2);
-            color: var(--accent-blue);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        section h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-desc {
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* ============================================
-           GRID DE MÓDULOS
-        ============================================ */
-        .modules-grid {
+        .formato-modules-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
         }
 
-        .module-card {
-            position: relative;
+        .formato-box, .modules-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 36px 28px;
-            transition: var(--transition-smooth);
-            overflow: hidden;
-            cursor: pointer;
+            border-radius: 24px;
+            padding: 36px;
         }
 
-        .module-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition-smooth);
-        }
-
-        .module-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 245, 212, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity var(--transition-smooth);
-        }
-
-        .module-card:hover {
-            border-color: rgba(0, 245, 212, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
-        }
-
-        .module-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .module-card:hover::after {
-            opacity: 1;
-        }
-
-        .module-icon {
-            position: relative;
-            width: 64px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            border-radius: 16px;
-            margin-bottom: 24px;
-            transition: var(--transition-smooth);
-        }
-
-        .module-card:hover .module-icon {
-            background: rgba(0, 245, 212, 0.15);
-            border-color: rgba(0, 245, 212, 0.4);
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .module-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--accent-neon);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .module-card h3 {
+        .formato-box h3, .modules-box h3 {
             font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            position: relative;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--accent-neon);
         }
 
-        .module-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
+        .timeline-mini {
             position: relative;
+            padding-left: 30px;
         }
 
-        /* ============================================
-           TIMELINE PREMIUM
-        ============================================ */
-        .timeline-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline-container::before {
+        .timeline-mini::before {
             content: '';
             position: absolute;
-            left: 30px;
+            left: 8px;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, var(--accent-neon), var(--accent-blue), var(--accent-purple));
+            background: linear-gradient(180deg, var(--accent-neon), var(--accent-purple));
             opacity: 0.3;
         }
 
-        .timeline-item {
+        .timeline-mini-item {
             position: relative;
-            padding-left: 80px;
-            padding-bottom: 48px;
-            transition: var(--transition-smooth);
+            padding-bottom: 20px;
         }
 
-        .timeline-item:last-child {
+        .timeline-mini-item:last-child {
             padding-bottom: 0;
         }
 
-        .timeline-dot {
+        .timeline-mini-dot {
             position: absolute;
-            left: 20px;
-            top: 8px;
-            width: 22px;
-            height: 22px;
+            left: -26px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: var(--bg-dark);
-            border: 3px solid var(--accent-neon);
-            box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
-            transition: var(--transition-smooth);
+            background: var(--accent-neon);
+            box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
         }
 
-        .timeline-item:hover .timeline-dot {
-            transform: scale(1.3);
-            box-shadow: 0 0 30px rgba(0, 245, 212, 0.6);
+        .timeline-mini-item.online .timeline-mini-dot {
+            background: var(--accent-purple);
+            box-shadow: 0 0 10px rgba(131, 56, 236, 0.5);
         }
 
-        .timeline-item.online .timeline-dot {
-            border-color: var(--accent-purple);
-            box-shadow: 0 0 20px rgba(131, 56, 236, 0.4);
+        .timeline-mini-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 4px;
         }
 
-        .timeline-item.online:hover .timeline-dot {
-            box-shadow: 0 0 30px rgba(131, 56, 236, 0.6);
+        .timeline-mini-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        .timeline-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 28px;
-            transition: var(--transition-smooth);
-        }
-
-        .timeline-item:hover .timeline-card {
-            border-color: rgba(0, 245, 212, 0.3);
-            transform: translateX(8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .tag-modal {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
+        .tag-mini {
+            display: inline-block;
+            font-size: 10px;
             text-transform: uppercase;
             font-weight: 700;
-            padding: 5px 12px;
+            padding: 3px 8px;
             border-radius: 50px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
         }
 
-        .tag-presencial {
+        .tag-presencial-mini {
             background: rgba(0, 245, 212, 0.1);
             color: var(--accent-neon);
             border: 1px solid rgba(0, 245, 212, 0.3);
         }
 
-        .tag-online {
+        .tag-online-mini {
             background: rgba(131, 56, 236, 0.1);
             color: var(--accent-purple);
             border: 1px solid rgba(131, 56, 236, 0.3);
         }
 
-        .timeline-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 8px;
+        .modules-list {
+            list-style: none;
         }
 
-        .timeline-card p {
-            color: var(--text-muted);
+        .modules-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modules-list li:last-child {
+            border-bottom: none;
+        }
+
+        .modules-list li::before {
+            content: '✦';
+            color: var(--accent-neon);
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .modules-list strong {
+            display: block;
+            color: var(--text-light);
             font-size: 0.95rem;
-            line-height: 1.7;
+            margin-bottom: 2px;
+        }
+
+        .modules-list span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         .meta-info-strip {
@@ -1020,12 +787,12 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 24px;
-            margin-top: 48px;
-            padding: 24px;
+            margin-top: 32px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.02);
             border: 1px dashed var(--border-color);
             border-radius: 16px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .meta-item {
@@ -1036,98 +803,85 @@
         }
 
         .meta-item svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             stroke: var(--accent-neon);
             stroke-width: 2;
             fill: none;
         }
 
         /* ============================================
-           MATERIAL DE CLASE (SIMPLIFICADO)
+           FAQ SECTION
         ============================================ */
-        .material-section {
-            padding: 80px 0;
-            background: var(--bg-card);
-        }
-
-        .material-box {
-            background: linear-gradient(135deg, rgba(19, 26, 44, 0.8) 0%, rgba(10, 14, 26, 0.95) 100%);
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            border-radius: 24px;
-            padding: 48px 40px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .material-box h3 {
-            font-family: var(--font-display);
-            color: var(--accent-neon);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-
-        .material-box p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 600px;
+        .faq-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* ============================================
-           CITAS E INSPIRACIÓN
-        ============================================ */
-        .quotes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .quote-card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.02);
+        .faq-item {
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 36px;
-            transition: var(--transition-smooth);
+            border-radius: 16px;
+            margin-bottom: 16px;
             overflow: hidden;
+            transition: var(--transition-smooth);
         }
 
-        .quote-card::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 8rem;
-            font-family: Georgia, serif;
-            color: rgba(0, 245, 212, 0.1);
-            line-height: 1;
+        .faq-item:hover {
+            border-color: rgba(0, 245, 212, 0.2);
         }
 
-        .quote-card:hover {
-            border-color: rgba(0, 245, 212, 0.3);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .quote-card p {
-            position: relative;
-            font-size: 1.1rem;
-            font-style: italic;
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
             color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 20px;
+            padding: 20px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-body);
+            transition: var(--transition-smooth);
         }
 
-        .quote-card span {
-            display: block;
-            font-style: normal;
-            font-weight: 600;
-            color: var(--accent-blue);
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+        .faq-question:hover {
+            color: var(--accent-neon);
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-neon);
+            stroke-width: 2;
+            fill: none;
+            transition: transform var(--transition-smooth);
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-smooth);
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
         }
 
         /* ============================================
@@ -1238,11 +992,65 @@
         }
 
         /* ============================================
-           FOOTER PREMIUM
+           STICKY CTA MOBILE
+        ============================================ */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            display: none;
+            width: calc(100% - 40px);
+            max-width: 400px;
+        }
+
+        .sticky-cta.visible {
+            display: block;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+            to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+
+        .sticky-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: var(--gradient-primary);
+            color: var(--bg-dark);
+            padding: 16px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 8px 32px rgba(0, 245, 212, 0.4);
+            transition: var(--transition-smooth);
+        }
+
+        .sticky-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 245, 212, 0.6);
+        }
+
+        .sticky-cta a svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ============================================
+           FOOTER
         ============================================ */
         footer {
             background: #060911;
-            padding: 80px 0 40px;
+            padding: 60px 0 30px;
             border-top: 1px solid var(--border-color);
         }
 
@@ -1250,7 +1058,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 48px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .footer-col h4 {
@@ -1314,7 +1122,7 @@
         .footer-bottom {
             text-align: center;
             border-top: 1px solid var(--border-color);
-            padding-top: 40px;
+            padding-top: 30px;
         }
 
         .footer-bottom p {
@@ -1348,8 +1156,9 @@
            RESPONSIVE
         ============================================ */
         @media (max-width: 968px) {
-            .slider-track {
-                grid-template-columns: repeat(2, 1fr);
+            .formato-modules-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
             }
 
             .tallerista-card {
@@ -1366,7 +1175,7 @@
 
         @media (max-width: 768px) {
             header {
-                padding: 160px 0 60px;
+                padding: 140px 0 60px;
             }
 
             section {
@@ -1386,39 +1195,20 @@
                 font-size: 13px;
             }
 
-            .slider-track {
+            .para-quien-grid {
                 grid-template-columns: 1fr;
             }
 
-            .lightbox-nav {
-                width: 40px;
-                height: 40px;
+            .tallerista-content h2 {
+                font-size: 2rem;
             }
 
-            .lightbox-nav svg {
-                width: 20px;
-                height: 20px;
+            .formato-box, .modules-box {
+                padding: 28px 24px;
             }
 
-            .modules-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-container::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                padding-left: 60px;
-            }
-
-            .timeline-dot {
-                left: 10px;
-            }
-
-            .meta-info-strip {
-                flex-direction: column;
-                gap: 16px;
+            .register-box {
+                padding: 48px 24px;
             }
 
             .action-buttons-group {
@@ -1435,8 +1225,10 @@
                 gap: 32px;
             }
 
-            .material-box {
-                padding: 32px 24px;
+            .meta-info-strip {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
             }
         }
 
@@ -1449,15 +1241,9 @@
                 height: 75px;
             }
 
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                width: 40px;
-                height: 40px;
-            }
-
-            .lightbox-nav {
-                display: none;
+            .sticky-cta {
+                bottom: 12px;
+                width: calc(100% - 24px);
             }
         }
 
@@ -1495,69 +1281,6 @@
         </div>
     </nav>
 
-    <!-- Slider de Imágenes -->
-    <section class="slider-section">
-        <div class="container">
-            <div class="slider-container">
-                <div class="slider-header">
-                    <h2>Galería del Taller</h2>
-                    <p>Conoce más sobre esta experiencia transformadora</p>
-                </div>
-                
-                <div class="slider-track" id="sliderTrack">
-                    <div class="slider-image-wrapper" data-index="0" onclick="openLightbox(0)">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop" alt="Taller presencial" loading="lazy">
-                        <div class="slider-image-overlay">
-                            <span>Ver imagen</span>
-                        </div>
-                    </div>
-                    <div class="slider-image-wrapper" data-index="1" onclick="openLightbox(1)">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=450&fit=crop" alt="Sesión online" loading="lazy">
-                        <div class="slider-image-overlay">
-                            <span>Ver imagen</span>
-                        </div>
-                    </div>
-                    <div class="slider-image-wrapper" data-index="2" onclick="openLightbox(2)">
-                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&h=450&fit=crop" alt="Trabajo en equipo" loading="lazy">
-                        <div class="slider-image-overlay">
-                            <span>Ver imagen</span>
-                        </div>
-                    </div>
-                    <div class="slider-image-wrapper" data-index="3" onclick="openLightbox(3)">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop" alt="Certificación" loading="lazy">
-                        <div class="slider-image-overlay">
-                            <span>Ver imagen</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slider-nav" id="sliderDots"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox" onclick="closeLightboxOnBackground(event)">
-        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar lightbox">
-            <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
-            </svg>
-        </button>
-        <button class="lightbox-nav prev" onclick="changeImage(-1)" aria-label="Imagen anterior">
-            <svg viewBox="0 0 24 24">
-                <polyline points="15 18 9 12 15 6"/>
-            </svg>
-        </button>
-        <img src="" alt="Vista ampliada" class="lightbox-image" id="lightboxImage" onclick="event.stopPropagation()">
-        <button class="lightbox-nav next" onclick="changeImage(1)" aria-label="Siguiente imagen">
-            <svg viewBox="0 0 24 24">
-                <polyline points="9 18 15 12 9 6"/>
-            </svg>
-        </button>
-        <div class="lightbox-counter" id="lightboxCounter"></div>
-    </div>
-
     <!-- Hero Section -->
     <header role="banner">
         <div class="container">
@@ -1584,67 +1307,151 @@
         </div>
     </header>
 
-    <!-- Tallerista Astromykos -->
-    <section class="tallerista-section">
+    <!-- ¿Para quién es? -->
+    <section id="para-quien">
         <div class="container">
-            <div class="tallerista-container">
-                <div class="tallerista-card reveal">
-                    <div class="tallerista-image-wrapper">
-                        <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1" alt="Astromykos - Tallerista" class="tallerista-image">
-                        <span class="tallerista-badge">Tallerista Principal</span>
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    ¿Para quién es este taller?
+                </span>
+                <h2>Diseñado para ti si...</h2>
+                <p class="section-desc">Este programa es ideal si te identificas con alguna de estas situaciones</p>
+            </div>
+            
+            <div class="para-quien-grid">
+                <div class="para-quien-card reveal">
+                    <div class="para-quien-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
                     </div>
-                    <div class="tallerista-content">
-                        <span class="tallerista-label">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            Tu Guía en este Viaje
-                        </span>
-                        <h2>Astromykos</h2>
-                        <p class="tallerista-role">Piloto de la nave de Lost Astronauta SpA</p>
-                        <p>Más de 25 años de trayectoria en las industrias creativas. Tutor validado por el Ministerio de Educación de Chile.</p>
-                        
-                        <div class="tallerista-credentials">
-                            <span class="credential-tag">
-                                <svg viewBox="0 0 24 24">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                </svg>
-                                25+ años experiencia
-                            </span>
-                            <span class="credential-tag">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Mineduc Validado
-                            </span>
-                            <span class="credential-tag">
-                                <svg viewBox="0 0 24 24">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                    <line x1="8" y1="21" x2="16" y2="21"/>
-                                    <line x1="12" y1="17" x2="12" y2="21"/>
-                                </svg>
-                                Industrias Creativas
-                            </span>
-                        </div>
+                    <h3>Quieres proteger tus datos</h3>
+                    <p>Te preocupa la seguridad en WhatsApp, Facebook y otras plataformas, y quieres aprender a navegar sin riesgos.</p>
+                </div>
 
-                        <a href="https://lostastronauta.org/about/" target="_blank" rel="noopener noreferrer" class="btn-tallerista">
-                            Conoce más sobre Astromykos
-                            <svg viewBox="0 0 24 24">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                        </a>
+                <div class="para-quien-card reveal">
+                    <div class="para-quien-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
                     </div>
+                    <h3>Quieres compartir tu historia</h3>
+                    <p>Tienes una vida de experiencias valiosas y quieres aprender a comunicarlas al mundo digital con confianza.</p>
+                </div>
+
+                <div class="para-quien-card reveal">
+                    <div class="para-quien-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3>Pierdes el miedo a la tecnología</h3>
+                    <p>Sientes que la tecnología avanza muy rápido y quieres acompañar ese ritmo con autonomía y seguridad.</p>
+                </div>
+
+                <div class="para-quien-card reveal">
+                    <div class="para-quien-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Buscas comunidad y conexión</h3>
+                    <p>Quieres ser parte de un grupo de personas con intereses similares y construir redes de apoyo digital.</p>
+                </div>
+
+                <div class="para-quien-card reveal">
+                    <div class="para-quien-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Quieres dejar un legado</h3>
+                    <p>Te interesa que tu experiencia y sabiduría trascienda y sea útil para las nuevas generaciones.</p>
+                </div>
+
+                <div class="para-quien-card reveal">
+                    <div class="para-quien-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Buscas aprender haciendo</h3>
+                    <p>Prefieres un formato práctico donde puedas aplicar lo aprendido de inmediato en tu vida diaria.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Módulos -->
-    <section id="modulos">
+    <!-- Tallerista Astromykos -->
+    <section class="tallerista-section">
+        <div class="container">
+            <div class="tallerista-card reveal">
+                <div class="tallerista-image-wrapper">
+                    <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1" alt="Astromykos - Tallerista" class="tallerista-image">
+                    <span class="tallerista-badge">Tallerista Principal</span>
+                </div>
+                <div class="tallerista-content">
+                    <span class="tallerista-label">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        Tu Guía en este Viaje
+                    </span>
+                    <h2>Astromykos</h2>
+                    <p class="tallerista-role">Piloto de la nave de Lost Astronauta SpA</p>
+                    <p>Más de 25 años de trayectoria en las industrias creativas. Tutor validado por el Ministerio de Educación de Chile.</p>
+                    
+                    <div class="tallerista-credentials">
+                        <span class="credential-tag">
+                            <svg viewBox="0 0 24 24">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            25+ años experiencia
+                        </span>
+                        <span class="credential-tag">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Mineduc Validado
+                        </span>
+                        <span class="credential-tag">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            Industrias Creativas
+                        </span>
+                    </div>
+
+                    <a href="https://lostastronauta.org/about/" target="_blank" rel="noopener noreferrer" class="btn-tallerista">
+                        Conoce más sobre Astromykos
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formato + Módulos Fusionados -->
+    <section id="programa">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-badge">
@@ -1652,182 +1459,93 @@
                         <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
                         <circle cx="12" cy="12" r="3"/>
                     </svg>
-                    6 Módulos de Especialización
+                    Programa Completo
                 </span>
-                <h2>Construye el ADN de tu Marca</h2>
-                <p class="section-desc">Descubre y potencia tu legado digital a través de un programa diseñado para trascender</p>
+                <h2>Formato y Contenido</h2>
+                <p class="section-desc">3 semanas de inmersión combinando lo mejor del aprendizaje presencial y online</p>
             </div>
             
-            <div class="modules-grid">
-                <div class="module-card reveal">
-                    <div class="module-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <circle cx="12" cy="12" r="6"/>
-                            <circle cx="12" cy="12" r="2"/>
-                        </svg>
+            <div class="formato-modules-container">
+                <div class="formato-box reveal">
+                    <h3> Formato Híbrido</h3>
+                    <div class="timeline-mini">
+                        <div class="timeline-mini-item">
+                            <div class="timeline-mini-dot"></div>
+                            <span class="tag-mini tag-presencial-mini">Presencial</span>
+                            <h4>Sábado 1: Identidad y Propósito</h4>
+                            <p>Rescate biográfico y definición de tu propósito digital.</p>
+                        </div>
+                        
+                        <div class="timeline-mini-item online">
+                            <div class="timeline-mini-dot"></div>
+                            <span class="tag-mini tag-online-mini">Online</span>
+                            <h4>Sesión 1: Arquitectura de Perfiles</h4>
+                            <p>Optimización y blindaje de WhatsApp y Facebook.</p>
+                        </div>
+                        
+                        <div class="timeline-mini-item">
+                            <div class="timeline-mini-dot"></div>
+                            <span class="tag-mini tag-presencial-mini">Presencial</span>
+                            <h4>Sábado 2: Discurso y Estrategia</h4>
+                            <p>Storytelling y presentación de impacto en 1 minuto.</p>
+                        </div>
+                        
+                        <div class="timeline-mini-item online">
+                            <div class="timeline-mini-dot"></div>
+                            <span class="tag-mini tag-online-mini">Online</span>
+                            <h4>Sesión 2: Soberanía Digital</h4>
+                            <p>Detección de estafas, contraseñas e IA asistiva.</p>
+                        </div>
+                        
+                        <div class="timeline-mini-item">
+                            <div class="timeline-mini-dot"></div>
+                            <span class="tag-mini tag-presencial-mini">Presencial</span>
+                            <h4>Sábado 3: Cierre y Certificación</h4>
+                            <p>Presentación final y entrega de certificados.</p>
+                        </div>
                     </div>
-                    <h3>Identidad</h3>
-                    <p>Descubre tu historia única y rescata tu valiosa experiencia de vida como tu mayor activo estratégico.</p>
                 </div>
 
-                <div class="module-card reveal">
-                    <div class="module-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                        </svg>
-                    </div>
-                    <h3>Propósito</h3>
-                    <p>Define con claridad qué quieres construir y qué legado deseas dejar impreso en el ecosistema digital.</p>
-                </div>
-
-                <div class="module-card reveal">
-                    <div class="module-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
-                    </div>
-                    <h3>Discurso</h3>
-                    <p>Aprende las claves del storytelling moderno para comunicar tu valor de forma auténtica y poderosa.</p>
-                </div>
-
-                <div class="module-card reveal">
-                    <div class="module-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
-                        </svg>
-                    </div>
-                    <h3>Esencia</h3>
-                    <p>Identifica con precisión tus habilidades transferibles y los factores únicos que te hacen irrepetible.</p>
-                </div>
-
-                <div class="module-card reveal">
-                    <div class="module-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                        </svg>
-                    </div>
-                    <h3>Branding</h3>
-                    <p>Aprende a configurar tu presencia en entornos como WhatsApp y Facebook con total control y privacidad.</p>
-                </div>
-
-                <div class="module-card reveal">
-                    <div class="module-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                    </div>
-                    <h3>Posición</h3>
-                    <p>Encuentra los canales ideales para compartir tu sabiduría acumulada de manera óptima y fluida con el mundo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formato Híbrido -->
-    <section id="formato">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/>
-                        <line x1="8" y1="2" x2="8" y2="6"/>
-                        <line x1="3" y1="10" x2="21" y2="10"/>
-                    </svg>
-                    Formato Híbrido
-                </span>
-                <h2>3 Semanas de Inmersión Total</h2>
-                <p class="section-desc">Combinando dinámicas presenciales de alto impacto con mentorías online personalizadas</p>
-            </div>
-            
-            <div class="timeline-container">
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="tag-modal tag-presencial">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                            Presencial
-                        </span>
-                        <h3>Sábado 1: Identidad y Propósito</h3>
-                        <p>Rescate biográfico profundo, mapeo dinámico del árbol de habilidades y definición de tu propósito digital autónomo.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item online reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="tag-modal tag-online">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                            Online
-                        </span>
-                        <h3>Sesión Online 1: Arquitectura de Perfiles</h3>
-                        <p>Optimización y blindaje de tus cuentas de WhatsApp y Facebook bajo estrictos estándares de privacidad y seguridad.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="tag-modal tag-presencial">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                            Presencial
-                        </span>
-                        <h3>Sábado 2: Discurso y Estrategia Comunicacional</h3>
-                        <p>Clínica personalizada de perfiles activos, laboratorios de storytelling y el diseño de tu presentación de impacto en 1 minuto.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item online reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="tag-modal tag-online">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                            Online
-                        </span>
-                        <h3>Sesión Online 2: Soberanía Tecnológica Avanzada</h3>
-                        <p>Modelos de detección temprana de estafas digitales, gestión criptográfica de contraseñas y uso práctico de Inteligencia Artificial asistiva.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="tag-modal tag-presencial">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                            Presencial
-                        </span>
-                        <h3>Sábado 3: Gran Gala de Cierre y Certificación</h3>
-                        <p>Presentación final de proyectos estelares, registros testimoniales y la entrega formal de certificaciones de la academia.</p>
-                    </div>
+                <div class="modules-box reveal">
+                    <h3>🎯 Los 6 Módulos ADN</h3>
+                    <ul class="modules-list">
+                        <li>
+                            <div>
+                                <strong>Identidad</strong>
+                                <span>Descubre tu historia única como activo estratégico.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Propósito</strong>
+                                <span>Define qué legado quieres dejar en el ecosistema digital.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Discurso</strong>
+                                <span>Comunica tu valor de forma auténtica y poderosa.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Esencia</strong>
+                                <span>Identifica tus habilidades transferibles e irrepetibles.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Branding</strong>
+                                <span>Configura tu presencia digital con control y privacidad.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Posición</strong>
+                                <span>Encuentra los canales ideales para compartir tu saber.</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -1859,42 +1577,105 @@
         </div>
     </section>
 
-    <!-- Material de Clase -->
-    <section class="material-section">
-        <div class="container">
-            <div class="material-box reveal">
-                <h3>📚 Material de Clase</h3>
-                <p>Durante el taller recibirás todo el material necesario para tu aprendizaje: guías prácticas, ejercicios, plantillas de trabajo y recursos digitales que podrás utilizar durante y después del programa.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Inspiración -->
-    <section id="inspiracion">
+    <!-- FAQ -->
+    <section id="faq">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
                     </svg>
-                    Filosofía
+                    Preguntas Frecuentes
                 </span>
-                <h2>Soberanía Colectiva</h2>
-                <p class="section-desc">Los pilares conceptuales de la Academia de la Vida y Lost Astronauta</p>
+                <h2>Resolvemos tus dudas</h2>
+                <p class="section-desc">Todo lo que necesitas saber antes de postularte</p>
             </div>
             
-            <div class="quotes-grid">
-                <div class="quote-card reveal">
-                    <p>La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad.</p>
-                    <span>— Lost Astronauta</span>
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿El taller es realmente gratuito?
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sí, el taller es completamente gratuito. Es una iniciativa de la Academia de la Vida y Lost Astronauta en alianza con el Centro Cultural Matta Sur, orientada a la inclusión digital de adultos mayores.
+                        </div>
+                    </div>
                 </div>
-                <div class="quote-card reveal">
-                    <p>Tu experiencia de vida es un activo único e incalculable. Es hora de proyectarlo al mundo digital.</p>
-                    <span>— Filosofía del Taller</span>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Necesito tener conocimientos previos de tecnología?
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No. El taller está diseñado para todos los niveles, desde quienes nunca han usado un smartphone hasta quienes ya tienen experiencia básica. Nos adaptamos a tu ritmo.
+                        </div>
+                    </div>
                 </div>
-                <div class="quote-card reveal">
-                    <p>Dejar definitivamente el rol de espectador para convertirte en el protagonista absoluto de tu narrativa.</p>
-                    <span>— Academia de la Vida</span>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué necesito para participar en las sesiones online?
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Solo necesitas un smartphone, tablet o computador con conexión a internet. Te enviaremos el enlace de Zoom antes de cada sesión online. Si tienes dificultades técnicas, te ayudamos a resolverlas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Recibiré algún material o certificado?
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sí. Recibirás material de clase (guías prácticas, ejercicios y plantillas) y un certificado de participación al completar el taller. Todo el material es tuyo para usar durante y después del programa.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Cuántos cupos hay disponibles?
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            El taller tiene un cupo limitado de 20 participantes para garantizar un acompañamiento personalizado y de calidad. Te recomendamos postularte pronto.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué pasa si no puedo asistir a alguna sesión?
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Entendemos que pueden surgir imprevistos. Las sesiones online quedan grabadas y el material se comparte por WhatsApp. Para las sesiones presenciales, te recomendamos avisar con anticipación.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1985,80 +1766,53 @@
         </div>
     </footer>
 
-    <!-- JavaScript para slider, lightbox y animaciones -->
-    <script>
-        // Slider de imágenes
-        const sliderTrack = document.getElementById('sliderTrack');
-        const dotsContainer = document.getElementById('sliderDots');
-        const images = sliderTrack.querySelectorAll('.slider-image-wrapper');
-        let currentDot = 0;
+    <!-- Sticky CTA Mobile -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="#inscripcion">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13 12H3"/>
+            </svg>
+            Postular Gratis Ahora
+        </a>
+    </div>
 
-        // Crear dots
-        images.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('slider-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
+    <!-- JavaScript -->
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Cerrar todos
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Abrir el clickeado si no estaba activo
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
             });
-            dotsContainer.appendChild(dot);
         });
 
-        const dots = dotsContainer.querySelectorAll('.slider-dot');
-
-        function goToSlide(index) {
-            const offset = -index * 100 / Math.min(images.length, 4);
-            sliderTrack.style.transform = `translateX(${offset}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            currentDot = index;
-        }
-
-        // Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxCounter = document.getElementById('lightboxCounter');
-        let currentImageIndex = 0;
-        const imageSources = Array.from(images).map(img => img.querySelector('img').src);
-
-        function openLightbox(index) {
-            currentImageIndex = index;
-            updateLightboxImage();
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function closeLightboxOnBackground(event) {
-            if (event.target === lightbox) {
-                closeLightbox();
-            }
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex < 0) currentImageIndex = imageSources.length - 1;
-            if (currentImageIndex >= imageSources.length) currentImageIndex = 0;
-            updateLightboxImage();
-        }
-
-        function updateLightboxImage() {
-            lightboxImage.src = imageSources[currentImageIndex];
-            lightboxCounter.textContent = `${currentImageIndex + 1} / ${imageSources.length}`;
-        }
-
-        // Navegación con teclado
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
+        // Sticky CTA en mobile
+        const stickyCta = document.getElementById('stickyCta');
+        const inscripcionSection = document.getElementById('inscripcion');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const inscripcionTop = inscripcionSection.getBoundingClientRect().top + scrollY;
             
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') changeImage(-1);
-            if (e.key === 'ArrowRight') changeImage(1);
+            // Mostrar sticky CTA después de 600px de scroll y antes de la sección de inscripción
+            if (scrollY > 600 && scrollY + windowHeight < inscripcionTop + 200) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
         });
 
         // Scroll reveal animations
@@ -2067,7 +1821,7 @@
         const revealOnScroll = () => {
             revealElements.forEach(el => {
                 const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 150;
+                const elementVisible = 100;
                 
                 if (elementTop < window.innerHeight - elementVisible) {
                     el.classList.add('active');
