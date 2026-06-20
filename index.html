@@ -3,1031 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taller gratuito de marca personal y soberanía digital para adultos mayores. Centro Cultural Matta Sur, Santiago.">
-    <title>Tu Marca Personal | Lost Astronauta</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>Taller de Soberanía Digital - Academia de la Vida & Lost Astronauta</title>
     <style>
+        /* Base & CSS Variables Premium */
         :root {
-            --color-bg: #0A1628;
-            --color-bg-secondary: #0f2140;
-            --color-primary: #00CED1;
-            --color-secondary: #FF1493;
-            --color-accent: #FFD700;
-            --color-cta: #7FFF00;
-            --color-cta-hover: #66CC00;
-            --color-text: #FFFFFF;
-            --color-text-secondary: #E0E0E0;
-            --font-main: 'Inter', sans-serif;
-            --transition: all 0.3s ease;
-            --shadow-neon: 0 0 20px rgba(0, 206, 209, 0.3);
-            --shadow-neon-pink: 0 0 20px rgba(255, 20, 147, 0.3);
+            --bg-dark: #0b0f19;
+            --bg-card: #131a2c;
+            --accent-glow: #3a86ff;
+            --accent-neon: #00f5d4;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
+        *, *::before, *::after {
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 18px;
-        }
-
         body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             font-family: var(--font-main);
-            background-color: var(--color-bg);
-            color: var(--color-text);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Navegación Sticky Simple */
+        /* Contenedores */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation con Blur y Transparencia */
         nav {
+            background-color: rgba(11, 15, 25, 0.85);
+            border-bottom: 1px solid var(--border-color);
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(10, 22, 40, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem;
-            border-bottom: 2px solid var(--color-primary);
+            backdrop-filter: blur(10px);
         }
-
-        .nav-container {
-            max-width: 600px;
+        .nav-wrapper {
+            max-width: 1100px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 15px 20px;
+            display: table;
+            width: 100%;
         }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--color-text);
+        .nav-left {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: left;
+        }
+        .nav-right {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+        }
+        .logo-nav {
+            height: 45px;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 8px rgba(0, 245, 212, 0.4));
+        }
+        .btn-nav {
+            background: linear-gradient(135deg, var(--accent-glow), #8338ec);
+            color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
         }
-
-        .logo i {
-            color: var(--color-primary);
-        }
-
-        .nav-cta {
-            background: var(--color-cta);
-            color: var(--color-bg);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(127, 255, 0, 0.3);
-        }
-
-        .nav-cta:hover {
+        .btn-nav:hover {
+            box-shadow: 0 6px 20px rgba(0, 245, 212, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(127, 255, 0, 0.5);
         }
 
-        /* Hero Section */
-        .hero {
-            margin-top: 70px;
-            padding: 3rem 1.5rem;
+        /* Header / Hero Section */
+        header {
+            padding: 140px 0 80px 0;
+            background: radial-gradient(circle at top right, rgba(58, 134, 255, 0.15), transparent 60%);
             text-align: center;
-            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
-            position: relative;
-            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0, 206, 209, 0.2) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
-        .hero-badge {
+        .badge-premium {
+            background: rgba(0, 245, 212, 0.1);
+            border: 1px solid var(--accent-neon);
+            color: var(--accent-neon);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
             display: inline-block;
-            background: var(--color-cta);
-            color: var(--color-bg);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            animation: bounce 2s ease infinite;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(0, 245, 212, 0.15);
         }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
+        header h1 {
+            font-size: 42px;
+            margin: 0 0 10px 0;
             font-weight: 800;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #fff 0%, var(--color-primary) 100%);
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--text-muted));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            margin-bottom: 2rem;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-visual {
-            margin: 2rem auto;
-            position: relative;
-            width: 200px;
-            height: 200px;
-        }
-
-        .astronaut {
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            box-shadow: var(--shadow-neon);
-            position: relative;
-            z-index: 2;
-        }
-
-        .dna-helix {
-            position: absolute;
-            top: -20px;
-            right: -40px;
-            width: 100px;
-            height: 200px;
-            animation: rotate 10s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--color-cta);
-            color: var(--color-bg);
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            transition: var(--transition);
-            box-shadow: 0 6px 25px rgba(127, 255, 0, 0.4);
-            border: 3px solid transparent;
-            position: relative;
-            z-index: 3;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(127, 255, 0, 0.6);
-            border-color: var(--color-accent);
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px);
-        }
-
-        /* Secciones Generales */
-        section {
-            padding: 3rem 1.5rem;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--color-text);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--color-text-secondary);
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* ¿Qué Aprenderás? - Los 6 Módulos ADN */
-        .modules {
-            background: var(--color-bg-secondary);
-        }
-
-        .modules-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .module-card {
-            background: var(--color-bg);
-            border-radius: 20px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .module-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-        }
-
-        .module-card:nth-child(even)::before {
-            background: linear-gradient(90deg, var(--color-secondary), var(--color-primary), var(--color-accent));
-        }
-
-        .module-card:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .module-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .module-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: var(--color-accent);
-        }
-
-        .module-card p {
-            color: var(--color-text-secondary);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Formato Híbrido */
-        .format-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .timeline-item {
-            background: var(--color-bg-secondary);
-            border-radius: 15px;
-            padding: 1.8rem;
-            border-left: 5px solid var(--color-primary);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .timeline-item.online {
-            border-left-color: var(--color-secondary);
-        }
-
-        .timeline-item.presencial {
-            border-left-color: var(--color-cta);
-        }
-
-        .timeline-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
+        .subtitle-hero {
+            color: var(--accent-glow);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
-
-        .badge-presencial {
-            background: var(--color-cta);
-            color: var(--color-bg);
+        .desc-hero {
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            color: var(--text-muted);
+            font-size: 17px;
         }
 
-        .badge-online {
-            background: var(--color-secondary);
+        /* Botón de Acción Principal */
+        .btn-action {
+            display: inline-block;
+            background: linear-gradient(135deg, #00f5d4, #3a86ff);
+            color: #0b0f19;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(0, 245, 212, 0.3);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(58, 134, 255, 0.5);
             color: white;
         }
 
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        /* Estructura de Secciones */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .timeline-item p {
-            color: var(--color-text-secondary);
-            font-size: 1rem;
-        }
-
-        .format-info {
-            background: linear-gradient(135deg, rgba(0, 206, 209, 0.1) 0%, rgba(255, 20, 147, 0.1) 100%);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-top: 2rem;
+        section h2 {
             text-align: center;
-            border: 2px solid var(--color-primary);
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 16px;
         }
 
-        .format-info p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-accent);
+        /* Cuadrícula Limpia con display: table para evitar problemas de layouts */
+        .grid-table {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+        .grid-row {
+            display: table-row;
+        }
+        .grid-cell {
+            display: table-cell;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 16px;
+            vertical-align: top;
+            transition: all 0.3s ease;
+        }
+        .grid-cell:hover {
+            border-color: rgba(58, 134, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Ideas Fuerza (en lugar de testimonios) */
-        .ideas-fuerza {
-            background: var(--color-bg-secondary);
+        .icon-box {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .grid-cell h3 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            color: white;
+        }
+        .grid-cell p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
-        .ideas-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+        /* Línea de Tiempo / Formato Híbrido */
+        .timeline-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
         }
-
-        .idea-card {
-            background: linear-gradient(135deg, var(--color-bg) 0%, rgba(0, 206, 209, 0.1) 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 2px solid var(--color-primary);
+        .timeline-item {
             position: relative;
-            transition: var(--transition);
+            padding-left: 30px;
+            border-left: 2px solid var(--accent-glow);
+            padding-bottom: 30px;
         }
-
-        .idea-card:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-neon);
+        .timeline-item:last-child {
+            padding-bottom: 0;
+            border-left: 2px solid transparent;
         }
-
-        .idea-card::before {
-            content: '"';
+        .timeline-item::before {
+            content: '';
             position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--color-secondary);
-            font-weight: 800;
-            background: var(--color-bg);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
+            background-color: var(--accent-neon);
+            box-shadow: 0 0 10px var(--accent-neon);
         }
-
-        .idea-card p {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--color-text);
-            margin-bottom: 1rem;
-            line-height: 1.6;
+        .tag-modal {
+            display: inline-block;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
         }
+        .tag-presencial { background: rgba(58, 134, 255, 0.15); color: #3a86ff; border: 1px solid rgba(58, 134, 255, 0.3); }
+        .tag-online { background: rgba(131, 56, 236, 0.15); color: #8338ec; border: 1px solid rgba(131, 56, 236, 0.3); }
+        
+        .timeline-item h3 { margin: 0 0 5px 0; font-size: 16px; color: white; }
+        .timeline-item p { margin: 0; font-size: 14px; color: var(--text-muted); }
 
-        .idea-card .author {
-            font-size: 0.9rem;
-            color: var(--color-accent);
-            font-weight: 600;
-        }
-
-        /* Soberanía Digital */
-        .soberania-features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            background: var(--color-bg-secondary);
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: var(--transition);
-        }
-
-        .feature-item:hover {
-            background: rgba(0, 206, 209, 0.1);
-            transform: translateX(5px);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            color: var(--color-cta);
-            flex-shrink: 0;
-        }
-
-        .feature-text h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--color-text);
-        }
-
-        .feature-text p {
-            color: var(--color-text-secondary);
-            font-size: 1rem;
-        }
-
-        /* CTA Final */
-        .cta-section {
-            background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+        .meta-info-strip {
             text-align: center;
-            padding: 4rem 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--text-light);
         }
 
-        .cta-box {
-            background: linear-gradient(135deg, rgba(127, 255, 0, 0.1) 0%, rgba(0, 206, 209, 0.1) 100%);
-            border: 3px solid var(--color-cta);
-            border-radius: 25px;
-            padding: 2.5rem 1.5rem;
-            max-width: 500px;
+        /* Sección de Entregables Premium */
+        .premium-include-box {
+            background: linear-gradient(135deg, rgba(19, 26, 44, 0.6), rgba(11, 15, 25, 0.9));
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .premium-title {
+            color: var(--accent-neon);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .premium-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .premium-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        .premium-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-neon);
+            font-size: 18px;
+            top: -2px;
+        }
+        .premium-list strong {
+            color: white;
+        }
+
+        /* Citas e Inspiración */
+        .quotes-grid {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+        .quote-card {
+            display: table-cell;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            font-style: italic;
+            vertical-align: top;
+        }
+        .quote-card span {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--accent-glow);
+            font-size: 13px;
+        }
+
+        /* Zona de Registro y Postulación */
+        .register-box {
+            background: radial-gradient(circle at center, rgba(58, 134, 255, 0.1), transparent 70%);
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            max-width: 800px;
             margin: 0 auto;
         }
-
-        .cta-box h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: var(--color-cta);
+        .action-buttons-group {
+            margin: 30px 0;
         }
-
-        .cta-box p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-text-secondary);
-        }
-
-        .urgency {
+        .btn-premium-whatsapp {
             display: inline-block;
-            background: var(--color-secondary);
+            background: #25D366;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s ease infinite;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+        }
+        .btn-premium-whatsapp:hover {
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
+            transform: translateY(-2px);
+        }
+        .btn-premium-mail {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-glow), #00f5d4);
+            color: #0b0f19;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
+            transition: all 0.3s;
+        }
+        .btn-premium-mail:hover {
+            box-shadow: 0 6px 22px rgba(0, 245, 212, 0.5);
+            transform: translateY(-2px);
+            color: #0b0f19;
         }
 
-        /* Footer */
+        /* Footer Integrado */
         footer {
-            background: var(--color-bg);
-            border-top: 2px solid var(--color-primary);
-            padding: 2rem 1.5rem;
-            text-align: center;
+            background-color: #060911;
+            padding: 60px 0 30px 0;
+            border-top: 1px solid var(--border-color);
         }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+        .footer-cols {
+            display: table;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .footer-col {
+            display: table-cell;
+            width: 33.33%;
+            vertical-align: top;
+            padding: 0 10px;
+        }
+        .logo-footer {
+            height: 55px;
+            filter: drop-shadow(0 0 12px rgba(255,255,255,0.1));
+            margin-bottom: 15px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin: 0 0 15px 0;
+            font-size: 16px;
+        }
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        /* Contenedor de Redes Sociales Vectoriales */
+        .social-links-container {
             display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .social-icon-premium {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .footer-logo i {
-            color: var(--color-primary);
-        }
-
-        .footer-contact {
-            color: var(--color-text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .footer-contact p {
-            margin: 0.3rem 0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--color-text);
-            font-size: 1.8rem;
-            transition: var(--transition);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background: var(--color-bg-secondary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
         }
-
-        .social-links a:hover {
-            color: var(--color-cta);
+        .social-icon-premium:hover {
+            color: var(--accent-neon);
+            background: rgba(0, 245, 212, 0.05);
+            border-color: var(--accent-neon);
             transform: translateY(-3px);
-            background: rgba(127, 255, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 245, 212, 0.2);
         }
 
-        .footer-tagline {
-            color: var(--color-accent);
-            font-style: italic;
-            font-size: 1rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            color: var(--text-muted);
+            font-size: 13px;
         }
-
-        /* Utilidades de Accesibilidad */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        /* Focus visible para navegación por teclado */
-        *:focus-visible {
-            outline: 3px solid var(--color-cta);
-            outline-offset: 2px;
-        }
-
-        /* Reducir movimiento para quienes lo prefieran */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Desktop - Media Queries */
-        @media (min-width: 768px) {
-            html {
-                font-size: 20px;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .modules-grid,
-            .ideas-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .soberania-features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .format-timeline {
-                gap: 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 900px;
-            }
-
-            .hero {
-                padding: 5rem 2rem;
-            }
-
-            section {
-                padding: 5rem 2rem;
-            }
-        }
+        .footer-bottom p { margin: 5px 0; }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
     <nav role="navigation" aria-label="Navegación principal">
-        <div class="nav-container">
-            <a href="#" class="logo" aria-label="Lost Astronauta - Inicio">
-                <i class="fas fa-user-astronaut" aria-hidden="true"></i>
-                <span>Lost Astronauta</span>
-            </a>
-            <a href="#inscripcion" class="nav-cta">Inscríbete Gratis</a>
+        <div class="nav-wrapper">
+            <div class="nav-left">
+                <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2026/04/LOGO-ACADEMIA-DE-LA-VIDA.png?w=886&ssl=1" alt="Academia de la Vida" class="logo-nav">
+            </div>
+            <div class="nav-right">
+                <a href="#inscripcion" class="btn-nav">Postular Gratis</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero" role="banner">
-        <div class="hero-content">
-            <span class="hero-badge">
-                <i class="fas fa-gift" aria-hidden="true"></i> Taller Gratuito
-            </span>
+    <header role="banner">
+        <div class="container">
+            <span class="badge-premium">🚀 PROGRAMA ACADÉMICO EXCLUSIVO</span>
             <h1>TU MARCA PERSONAL</h1>
-            <p class="hero-subtitle">Experiencia que Trasciende</p>
-            <p class="hero-description">
-                Construye tu identidad digital con soberanía y seguridad. 
-                Un espacio diseñado para adultos mayores en el Centro Cultural Matta Sur.
+            <p class="subtitle-hero">Experiencia que Trasciende</p>
+            <p class="desc-hero">
+                Construye tu identidad digital con soberanía y seguridad. Un espacio de alta fidelidad metodológica diseñado especialmente para adultos mayores en el Centro Cultural Matta Sur.
             </p>
-            
-            <div class="hero-visual" aria-hidden="true">
-                <div class="astronaut">
-                    <i class="fas fa-user-astronaut"></i>
-                </div>
-                <svg class="dna-helix" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 0 Q70 25 50 50 Q30 75 50 100 Q70 125 50 150 Q30 175 50 200" 
-                          stroke="#FF1493" stroke-width="4" fill="none" opacity="0.8"/>
-                    <path d="M50 0 Q30 25 50 50 Q70 75 50 100 Q30 125 50 150 Q70 175 50 200" 
-                          stroke="#00CED1" stroke-width="4" fill="none" opacity="0.8"/>
-                    <line x1="35" y1="25" x2="65" y2="25" stroke="#FFD700" stroke-width="2"/>
-                    <line x1="35" y1="50" x2="65" y2="50" stroke="#FFD700" stroke-width="2"/>
-                    <line x1="35" y1="75" x2="65" y2="75" stroke="#FFD700" stroke-width="2"/>
-                    <line x1="35" y1="100" x2="65" y2="100" stroke="#FFD700" stroke-width="2"/>
-                    <line x1="35" y1="125" x2="65" y2="125" stroke="#FFD700" stroke-width="2"/>
-                    <line x1="35" y1="150" x2="65" y2="150" stroke="#FFD700" stroke-width="2"/>
-                    <line x1="35" y1="175" x2="65" y2="175" stroke="#FFD700" stroke-width="2"/>
-                </svg>
-            </div>
-
-            <a href="#inscripcion" class="cta-button">
-                <i class="fas fa-ticket-alt" aria-hidden="true"></i> INSCRÍBETE GRATIS
-            </a>
+            <a href="#inscripcion" class="btn-action">INICIAR MI POSTULACIÓN</a>
         </div>
     </header>
 
-    <!-- ¿Qué Aprenderás? -->
-    <section class="modules" aria-labelledby="modulos-title">
+    <section id="modulos">
         <div class="container">
-            <h2 id="modulos-title" class="section-title">
-                <i class="fas fa-dna" aria-hidden="true"></i> Construye el ADN de tu Marca
-            </h2>
-            <p class="section-subtitle">6 módulos para descubrir y potenciar tu identidad digital</p>
+            <h2>Construye el ADN de tu Marca</h2>
+            <p class="section-desc">6 módulos de especialización para descubrir y potenciar tu legado digital</p>
             
-            <div class="modules-grid">
-                <article class="module-card">
-                    <div class="module-icon" aria-hidden="true">🎯</div>
-                    <h3>Identidad</h3>
-                    <p>Descubre tu historia única y rescata tu experiencia de vida como tu mayor activo.</p>
-                </article>
-
-                <article class="module-card">
-                    <div class="module-icon" aria-hidden="true">🚀</div>
-                    <h3>Propósito</h3>
-                    <p>Define qué quieres construir y qué legado deseas dejar en el mundo digital.</p>
-                </article>
-
-                <article class="module-card">
-                    <div class="module-icon" aria-hidden="true">💬</div>
-                    <h3>Discurso</h3>
-                    <p>Aprende a comunicar tu valor de forma auténtica y poderosa.</p>
-                </article>
-
-                <article class="module-card">
-                    <div class="module-icon" aria-hidden="true">✨</div>
-                    <h3>Esencia</h3>
-                    <p>Identifica tus habilidades transferibles y lo que te hace irrepetible.</p>
-                </article>
-
-                <article class="module-card">
-                    <div class="module-icon" aria-hidden="true">🎨</div>
-                    <h3>Branding</h3>
-                    <p>Configura tu presencia digital en WhatsApp y Facebook con privacidad.</p>
-                </article>
-
-                <article class="module-card">
-                    <div class="module-icon" aria-hidden="true"></div>
-                    <h3>Posición</h3>
-                    <p>Encuentra dónde y cómo compartir tu sabiduría con el mundo.</p>
-                </article>
+            <div class="grid-table">
+                <div class="grid-row">
+                    <div class="grid-cell">
+                        <div class="icon-box">🎯</div>
+                        <h3>Identidad</h3>
+                        <p>Descubre tu historia única y rescata tu valiosa experiencia de vida como tu mayor activo estratégico.</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="icon-box">🚀</div>
+                        <h3>Propósito</h3>
+                        <p>Define con claridad qué quieres construir y qué legado deseas dejar impreso en el ecosistema digital.</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="icon-box">💬</div>
+                        <h3>Discurso</h3>
+                        <p>Aprende las claves del storytelling moderno para comunicar tu valor de forma auténtica y poderosa.</p>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell">
+                        <div class="icon-box">✨</div>
+                        <h3>Esencia</h3>
+                        <p>Identifica con precisión tus habilidades transferibles y los factores únicos que te hacen irrepetible.</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="icon-box">🎨</div>
+                        <h3>Branding</h3>
+                        <p>Aprende a configurar tu presencia en entornos como WhatsApp y Facebook con total control y privacidad.</p>
+                    </div>
+                    <div class="grid-cell">
+                        <div class="icon-box">🌐</div>
+                        <h3>Posición</h3>
+                        <p>Encuentra los canales ideales para compartir tu sabiduría acumulada de manera óptima y fluida con el mundo.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Formato Híbrido -->
-    <section class="formato" aria-labelledby="formato-title">
+    <section id="formato">
         <div class="container">
-            <h2 id="formato-title" class="section-title">
-                <i class="fas fa-calendar-alt" aria-hidden="true"></i> Formato Híbrido
-            </h2>
-            <p class="section-subtitle">3 semanas de aprendizaje presencial y online</p>
+            <h2>Formato Híbrido de Alto Rendimiento</h2>
+            <p class="section-desc">3 semanas de inmersión combinando dinámicas presenciales y mentorías online</p>
             
-            <div class="format-timeline">
-                <article class="timeline-item presencial">
-                    <span class="timeline-badge badge-presencial">
-                        <i class="fas fa-users" aria-hidden="true"></i> Presencial
-                    </span>
+            <div class="timeline-box">
+                <div class="timeline-item">
+                    <span class="tag-modal tag-presencial">Presencial</span>
                     <h3>Sábado 1: Identidad y Propósito</h3>
-                    <p>Rescate biográfico, árbol de habilidades y definición de tu propósito digital.</p>
-                </article>
-
-                <article class="timeline-item online">
-                    <span class="timeline-badge badge-online">
-                        <i class="fas fa-laptop" aria-hidden="true"></i> Online
-                    </span>
-                    <h3>Sesión Online 1: Configuración</h3>
-                    <p>Optimiza tu perfil de WhatsApp/Facebook con enfoque de privacidad y seguridad.</p>
-                </article>
-
-                <article class="timeline-item presencial">
-                    <span class="timeline-badge badge-presencial">
-                        <i class="fas fa-users" aria-hidden="true"></i> Presencial
-                    </span>
-                    <h3>Sábado 2: Discurso y Estrategia</h3>
-                    <p>Clínica de perfiles, storytelling y cómo presentarte en 1 minuto.</p>
-                </article>
-
-                <article class="timeline-item online">
-                    <span class="timeline-badge badge-online">
-                        <i class="fas fa-laptop" aria-hidden="true"></i> Online
-                    </span>
-                    <h3>Sesión Online 2: Soberanía Digital</h3>
-                    <p>Detección de estafas, gestión de contraseñas y uso de IA asistiva.</p>
-                </article>
-
-                <article class="timeline-item presencial">
-                    <span class="timeline-badge badge-presencial">
-                        <i class="fas fa-users" aria-hidden="true"></i> Presencial
-                    </span>
-                    <h3>Sábado 3: Cierre y Certificación</h3>
-                    <p>Presentación de avances, testimoniales y entrega de certificados.</p>
-                </article>
+                    <p>Rescate biográfico profundo, mapeo dinámico del árbol de habilidades y definición de tu propósito digital autónomo.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="tag-modal tag-online">Online</span>
+                    <h3>Sesión Online 1: Arquitectura de Perfiles</h3>
+                    <p>Optimización y blindaje de tus cuentas de WhatsApp y Facebook bajo estrictos estándares de privacidad y seguridad.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="tag-modal tag-presencial">Presencial</span>
+                    <h3>Sábado 2: Discurso y Estrategia Comunicacional</h3>
+                    <p>Clínica personalizada de perfiles activos, laboratorios de storytelling y el diseño de tu presentación de impacto en 1 minuto.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="tag-modal tag-online">Online</span>
+                    <h3>Sesión Online 2: Soberanía Tecnológica Avanzada</h3>
+                    <p>Modelos de detección temprana de estafas digitales, gestión criptográfica de contraseñas y uso práctico de Inteligencia Artificial asistiva.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="tag-modal tag-presencial">Presencial</span>
+                    <h3>Sábado 3: Gran Gala de Cierre y Certificación</h3>
+                    <p>Presentación final de proyectos estelares, registros testimoniales y la entrega formal de certificaciones de la academia.</p>
+                </div>
             </div>
 
-            <div class="format-info">
-                <p>
-                    <i class="fas fa-clock" aria-hidden="true"></i> 
-                    Duración: 3 semanas | Horario: 10:00 - 12:00 hrs<br>
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 
-                    Centro Cultural Matta Sur, Santiago
+            <div class="meta-info-strip">
+                ⏱️ <strong>Duración:</strong> 3 Semanas Intensivas | 🗓️ <strong>Horario:</strong> Sábados de 10:00 a 12:00 hrs | 📍 <strong>Sede:</strong> Centro Cultural Matta Sur, Santiago
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia-premium">
+        <div class="container">
+            <h2>¿Qué incluye tu Viaje de Soberanía?</h2>
+            <p class="section-desc">Diseñamos cada punto de contacto para entregarte un programa exclusivo y memorable</p>
+            
+            <div class="premium-include-box">
+                <div class="premium-title">ENTREGABLES Y PRIVILEGIOS DE TRIPULANTE</div>
+                <ul class="premium-list">
+                    <li><strong>La Bitácora del Astronauta:</strong> Carpeta de diseño exclusivo en alta gama impresa con guías metodológicas y herramientas de diseño de marca personal de la Academia de la Vida.</li>
+                    <li><strong>Ritual de Conectividad Segura:</strong> Auditoría en vivo y configuración guiada de tu smartphone personal para blindar tus datos y eliminar rastreadores en la primera sesión.</li>
+                    <li><strong>Credencial Oficial de Agente Digital:</strong> Identificación física exclusiva de Lost Astronauta que te acredita como miembro activo del despliegue de soberanía territorial.</li>
+                    <li><strong>Diploma de Honor de la Academia:</strong> Certificado de alta calidad en papel hilado premium que valida tus nuevas competencias digitales avanzadas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="inspiracion">
+        <div class="container">
+            <h2>Filosofía de Soberanía Colectiva</h2>
+            <p class="section-desc">Los pilares conceptuales de la Academia de la Vida y Lost Astronauta</p>
+            
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    "La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad."
+                    <span>— Lost Astronauta</span>
+                </div>
+                <div class="quote-card">
+                    "Tu experiencia de vida es un activo único e incalculable. Es hora de proyectarlo al mundo digital."
+                    <span>— Filosofía del Taller</span>
+                </div>
+                <div class="quote-card">
+                    "Dejar definitivamente el rol de espectador para convertirte en el protagonista absoluto de tu narrativa."
+                    <span>— Academia de la Vida</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscripcion">
+        <div class="container">
+            <div class="register-box">
+                <span class="badge-premium" style="border-color: var(--accent-glow); color: var(--accent-glow); background: rgba(58,134,255,0.1);">🔒 CUPO LIMITADO A 20 PARTICIPANTES</span>
+                <h2>Asegura tu Espacio en la Academia</h2>
+                <p class="desc-hero" style="margin-bottom: 15px;">
+                    Inicia tu proceso de postulación gratuito hoy mismo. Tu historia y experiencia merecen ser compartidas con total autonomía y seguridad.
+                </p>
+                
+                <div class="action-buttons-group">
+                    <a href="https://wa.me/56975693952?text=Hola%20Academia%20de%20la%20Vida%2C%20quiero%20postular%20al%20Taller%20Gratuito%20de%20Soberan%C3%ADa%20Digital%20en%20Matta%20Sur." target="_blank" rel="noopener noreferrer" class="btn-premium-whatsapp">
+                        🟢 POSTULAR POR WHATSAPP
+                    </a>
+                    
+                    <a href="mailto:info@lostastronauta.org?cc=lost.astronauta@gmail.com&subject=Inscripci%C3%B3n%20Taller%20Soberan%C3%ADa%20Digital&body=Hola%20Equipo%20de%20Lost%20Astronauta%2C%20me%20gustar%C3%ADa%20inscribirme%20en%20el%20taller%20para%20adultos%20mayores.%0A%0AMis%20datos%20de%20contacto%20son%3A%0A-%20Nombre%20Completo%3A%0A-%20Edad%3A%0A-%20%C2%BFDispengo%20de%20un%20tel%C3%A9fono%20Inteligente%3F%20(S%C3%AD%20%2F%20No)%3A%0A%0A%C2%A1Muchas%20gracias!" class="btn-premium-mail">
+                        🔵 POSTULAR POR CORREO ELECTRÓNICO
+                    </a>
+                </div>
+                
+                <p style="font-size: 14px; color: var(--text-muted); margin: 0;">
+                    Consultas directas al ecosistema corporativo: <strong>info@lostastronauta.org</strong>
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Ideas Fuerza -->
-    <section class="ideas-fuerza" aria-labelledby="ideas-title">
-        <div class="container">
-            <h2 id="ideas-title" class="section-title">
-                <i class="fas fa-lightbulb" aria-hidden="true"></i> ¿Por qué participar?
-            </h2>
-            <p class="section-subtitle">Ideas que nos inspiran a construir juntos</p>
-            
-            <div class="ideas-grid">
-                <article class="idea-card">
-                    <p>La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad.</p>
-                    <span class="author">— Lost Astronauta</span>
-                </article>
-
-                <article class="idea-card">
-                    <p>Tu experiencia de vida es un activo único. Es hora de compartirlo con el mundo digital.</p>
-                    <span class="author">— Filosofía del taller</span>
-                </article>
-
-                <article class="idea-card">
-                    <p>La tecnología es un derecho, no un privilegio. Mereces usarla con autonomía y seguridad.</p>
-                    <span class="author">— Compromiso social</span>
-                </article>
-
-                <article class="idea-card">
-                    <p>Dejar de ser espectador para convertirte en protagonista de tu narrativa digital.</p>
-                    <span class="author">— Empoderamiento</span>
-                </article>
-
-                <article class="idea-card">
-                    <p>Tu marca personal no es vanidad: es la herramienta para mantener tu relevancia y legado.</p>
-                    <span class="author">— Propósito</span>
-                </article>
-
-                <article class="idea-card">
-                    <p>Validar tu existencia, tu historia y tu potencial de futuro en el mundo digital.</p>
-                    <span class="author">— Justicia digital</span>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Soberanía Digital -->
-    <section class="soberania" aria-labelledby="soberania-title">
-        <div class="container">
-            <h2 id="soberania-title" class="section-title">
-                <i class="fas fa-shield-alt" aria-hidden="true"></i> Soberanía Digital
-            </h2>
-            <p class="section-subtitle">Aprende a proteger tu presencia en el mundo digital</p>
-            
-            <div class="soberania-features">
-                <article class="feature-item">
-                    <div class="feature-icon" aria-hidden="true">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Privacidad Total</h3>
-                        <p>Configura quién ve tu información en WhatsApp y Facebook. Tú decides.</p>
-                    </div>
-                </article>
-
-                <article class="feature-item">
-                    <div class="feature-icon" aria-hidden="true">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Detecta Estafas</h3>
-                        <p>Aprende a identificar mensajes sospechosos y protege tus datos.</p>
-                    </div>
-                </article>
-
-                <article class="feature-item">
-                    <div class="feature-icon" aria-hidden="true">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>Contraseñas Seguras</h3>
-                        <p>Gestiona tus accesos con verificación en dos pasos y protección.</p>
-                    </div>
-                </article>
-
-                <article class="feature-item">
-                    <div class="feature-icon" aria-hidden="true">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h3>IA Asistiva</h3>
-                        <p>Usa asistentes de voz y herramientas de IA para facilitar tu vida.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final / Inscripción -->
-    <section id="inscripcion" class="cta-section" aria-labelledby="cta-title">
-        <div class="cta-box">
-            <span class="urgency">
-                <i class="fas fa-users" aria-hidden="true"></i> Cupo limitado: 20 participantes
-            </span>
-            <h2 id="cta-title">¡Inscríbete Gratis!</h2>
-            <p>
-                Da el primer paso hacia tu soberanía digital. 
-                Tu experiencia merece ser compartida.
-            </p>
-            <a href="mailto:contacto@lostastronauta.org?subject=Inscripción%20Taller%20Marca%20Personal&body=Hola,%20quiero%20inscribirme%20al%20taller%20de%20Marca%20Personal%20para%20adultos%20mayores.%0A%0AMi%20nombre%20es:%0A%0ATengo%20teléfono%20smartphone:%20Sí%20/%20No%0A%0A¡Gracias!" 
-               class="cta-button"
-               style="font-size: 1.3rem; padding: 1.5rem 3rem;">
-                <i class="fas fa-paper-plane" aria-hidden="true"></i> ENVIAR INSCRIPCIÓN
-            </a>
-            <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--color-text-secondary);">
-                <i class="fas fa-envelope" aria-hidden="true"></i> 
-                O escríbenos a: contacto@lostastronauta.org
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer role="contentinfo">
-        <div class="footer-logo">
-            <i class="fas fa-user-astronaut" aria-hidden="true"></i>
-            <span>Lost Astronauta</span>
+        <div class="container">
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=320%2C296&ssl=1&resize=320%2C296" alt="Lost Astronauta" class="logo-footer">
+                    <p>Un despliegue de innovación educativa, identidad transmedia y rescate biográfico en el tercer planeta.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Canales Oficiales</h4>
+                    <p>📧 info@lostastronauta.org</p>
+                    <p>📧 lost.astronauta@gmail.com</p>
+                    <p>📞 +56 9 7569 3952</p>
+                    <p>📍 Santiago, Chile</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Ecosistema de Redes</h4>
+                    <p>Sigue de cerca las misiones y actualizaciones de nuestras marcas:</p>
+                    <div class="social-links-container">
+                        <a href="https://instagram.com/lostastronauta" target="_blank" rel="noopener noreferrer" class="social-icon-premium" aria-label="Instagram de Lost Astronauta">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://youtube.com/@lostastronauta" target="_blank" rel="noopener noreferrer" class="social-icon-premium" aria-label="YouTube de Lost Astronauta">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"/><path d="m10 15 5-3-5-3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>"La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad."</p>
+                <p>&copy; 2026 Lost Astronauta & Academia de la Vida. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <div class="footer-contact">
-            <p><i class="fas fa-envelope" aria-hidden="true"></i> contacto@lostastronauta.org</p>
-            <p><i class="fas fa-phone" aria-hidden="true"></i> +56 9 XXXX XXXX</p>
-            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Santiago, Chile</p>
-        </div>
-        <div class="social-links" aria-label="Redes sociales">
-            <a href="#" aria-label="Facebook">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a href="#" aria-label="Instagram">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://wa.me/569XXXXXXXX" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            </a>
-        </div>
-        <p class="footer-tagline">
-            "La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad."
-        </p>
-        <p style="margin-top: 1rem; color: var(--color-text-secondary); font-size: 0.85rem;">
-            © 2026 Lost Astronauta. Todos los derechos reservados.
-        </p>
     </footer>
 
-    <!-- JavaScript para interacciones -->
-    <script>
-        // Smooth scroll para navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animación de entrada al scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observar todas las tarjetas
-        document.querySelectorAll('.module-card, .idea-card, .timeline-item, .feature-item').forEach((el) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Mostrar/ocultar navegación al hacer scroll
-        let lastScroll = 0;
-        const nav = document.querySelector('nav');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                nav.style.boxShadow = 'none';
-            } else {
-                nav.style.boxShadow = '0 2px 20px rgba(0, 206, 209, 0.3)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Accesibilidad: Saltar al contenido principal
-        const skipLink = document.createElement('a');
-        skipLink.href = '#main-content';
-        skipLink.className = 'sr-only';
-        skipLink.textContent = 'Saltar al contenido principal';
-        document.body.insertBefore(skipLink, document.body.firstChild);
-    </script>
 </body>
 </html>
