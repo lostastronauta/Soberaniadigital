@@ -1,1861 +1,355 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Primary Meta Tags -->
-    <title>Taller de Soberanía Digital | Academia de la Vida & Lost Astronauta</title>
-    <meta name="title" content="Taller de Soberanía Digital | Academia de la Vida">
-    <meta name="description" content="Programa gratuito de marca personal y soberanía digital para adultos mayores. 3 semanas de formación presencial y online en Centro Cultural Matta Sur, Santiago.">
-    <meta name="keywords" content="soberanía digital, adultos mayores, marca personal, taller gratuito, Santiago, Matta Sur, identidad digital, seguridad digital, Academia de la Vida, Lost Astronauta">
-    <meta name="author" content="Lost Astronauta SpA - Academia de la Vida">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Spanish">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lostastronauta.org/taller-soberania-digital/">
-    <meta property="og:title" content="Taller de Soberanía Digital | Academia de la Vida">
-    <meta property="og:description" content="Construye tu identidad digital con soberanía y seguridad. Programa gratuito para adultos mayores en Centro Cultural Matta Sur.">
-    <meta property="og:image" content="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1">
-    <meta property="og:locale" content="es_CL">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://lostastronauta.org/taller-soberania-digital/">
-    <meta property="twitter:title" content="Taller de Soberanía Digital | Academia de la Vida">
-    <meta property="twitter:description" content="Construye tu identidad digital con soberanía y seguridad. Programa gratuito para adultos mayores.">
-    <meta property="twitter:image" content="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1">
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=180%2C180&ssl=1">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=32%2C32&ssl=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=16%2C16&ssl=1">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="shortcut icon" href="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=32%2C32&ssl=1" type="image/png">
-    
-    <!-- Fonts Premium -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ============================================
-           RESET & VARIABLES PREMIUM
-        ============================================ */
-        :root {
-            --bg-dark: #0a0e1a;
-            --bg-card: #131a2c;
-            --bg-card-hover: #1a2338;
-            --accent-blue: #3a86ff;
-            --accent-neon: #00f5d4;
-            --accent-purple: #8338ec;
-            --accent-pink: #ff006e;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --shadow-glow: 0 0 40px rgba(0, 245, 212, 0.15);
-            --gradient-primary: linear-gradient(135deg, #00f5d4 0%, #3a86ff 100%);
-            --gradient-secondary: linear-gradient(135deg, #8338ec 0%, #3a86ff 100%);
-            --gradient-mesh: radial-gradient(at 0% 0%, rgba(58, 134, 255, 0.15) 0px, transparent 50%),
-                             radial-gradient(at 100% 0%, rgba(131, 56, 236, 0.1) 0px, transparent 50%),
-                             radial-gradient(at 100% 100%, rgba(0, 245, 212, 0.08) 0px, transparent 50%),
-                             radial-gradient(at 0% 100%, rgba(255, 0, 110, 0.05) 0px, transparent 50%);
-            --font-display: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: var(--font-body);
-            line-height: 1.7;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ============================================
-           NAVEGACIÓN
-        ============================================ */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 14, 26, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition-smooth);
-        }
-
-        nav.scrolled {
-            background: rgba(10, 14, 26, 0.95);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-nav {
-            height: 120px;
-            width: auto;
-            filter: drop-shadow(0 0 12px rgba(0, 245, 212, 0.4));
-            transition: var(--transition-smooth);
-        }
-
-        .logo-nav:hover {
-            filter: drop-shadow(0 0 20px rgba(0, 245, 212, 0.6));
-            transform: scale(1.02);
-        }
-
-        .btn-nav {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gradient-secondary);
-            color: white;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: var(--transition-smooth);
-            box-shadow: 0 4px 20px rgba(131, 56, 236, 0.3);
-            overflow: hidden;
-        }
-
-        .btn-nav::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-nav:hover::before {
-            left: 100%;
-        }
-
-        .btn-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(131, 56, 236, 0.5);
-        }
-
-        /* ============================================
-           HERO SECTION
-        ============================================ */
-        header {
-            position: relative;
-            padding: 180px 0 100px;
-            text-align: center;
-            overflow: hidden;
-            background: var(--gradient-mesh);
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 245, 212, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(58, 134, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(131, 56, 236, 0.06) 0%, transparent 50%);
-            animation: meshMove 20s ease infinite;
-        }
-
-        @keyframes meshMove {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-20px, -20px); }
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .badge-premium {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.3);
-            color: var(--accent-neon);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-            box-shadow: 0 0 20px rgba(0, 245, 212, 0.15);
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 212, 0.15); }
-            50% { box-shadow: 0 0 30px rgba(0, 245, 212, 0.3); }
-        }
-
-        header h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 700;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle-hero {
-            font-family: var(--font-display);
-            color: var(--accent-blue);
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 500;
-            margin-bottom: 24px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .desc-hero {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            line-height: 1.8;
-        }
-
-        .btn-action {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--gradient-primary);
-            color: var(--bg-dark);
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 8px 32px rgba(0, 245, 212, 0.3);
-            transition: var(--transition-smooth);
-            overflow: hidden;
-        }
-
-        .btn-action::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s;
-        }
-
-        .btn-action:hover::before {
-            left: 100%;
-        }
-
-        .btn-action:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(0, 245, 212, 0.5);
-        }
-
-        .btn-action svg {
-            transition: transform var(--transition-smooth);
-        }
-
-        .btn-action:hover svg {
-            transform: translateX(4px);
-        }
-
-        /* ============================================
-           SECCIONES GENERALES
-        ============================================ */
-        section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(58, 134, 255, 0.08);
-            border: 1px solid rgba(58, 134, 255, 0.2);
-            color: var(--accent-blue);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        section h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-desc {
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* ============================================
-           ¿PARA QUIÉN ES? (NUEVA SECCIÓN)
-        ============================================ */
-        .para-quien-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .para-quien-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 32px 24px;
-            text-align: center;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .para-quien-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition-smooth);
-        }
-
-        .para-quien-card:hover {
-            border-color: rgba(0, 245, 212, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
-        }
-
-        .para-quien-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .para-quien-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-        }
-
-        .para-quien-card:hover .para-quien-icon {
-            background: rgba(0, 245, 212, 0.15);
-            border-color: rgba(0, 245, 212, 0.4);
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .para-quien-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--accent-neon);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .para-quien-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 12px;
-        }
-
-        .para-quien-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* ============================================
-           TALLERISTA ASTROMYKOS
-        ============================================ */
-        .tallerista-section {
-            background: var(--bg-dark);
-        }
-
-        .tallerista-card {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 48px;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(19, 26, 44, 0.8) 0%, rgba(10, 14, 26, 0.95) 100%);
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            border-radius: 32px;
-            padding: 48px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), var(--shadow-glow);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .tallerista-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 245, 212, 0.03) 0%, transparent 70%);
-            animation: rotate 30s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .tallerista-image-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-
-        .tallerista-image {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border: 3px solid rgba(0, 245, 212, 0.3);
-            transition: var(--transition-smooth);
-        }
-
-        .tallerista-image:hover {
-            transform: scale(1.02);
-            border-color: var(--accent-neon);
-            box-shadow: 0 25px 70px rgba(0, 245, 212, 0.3);
-        }
-
-        .tallerista-badge {
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            background: var(--gradient-primary);
-            color: var(--bg-dark);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 0 4px 15px rgba(0, 245, 212, 0.4);
-        }
-
-        .tallerista-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .tallerista-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.3);
-            color: var(--accent-neon);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .tallerista-content h2 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tallerista-role {
-            color: var(--accent-blue);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .tallerista-content p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        .tallerista-credentials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .credential-tag {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .credential-tag svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--accent-neon);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .btn-tallerista {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: transparent;
-            color: var(--accent-neon);
-            text-decoration: none;
-            padding: 14px 32px;
-            border: 2px solid var(--accent-neon);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: var(--transition-smooth);
-        }
-
-        .btn-tallerista:hover {
-            background: var(--accent-neon);
-            color: var(--bg-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 245, 212, 0.4);
-        }
-
-        .btn-tallerista svg {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        /* ============================================
-           FORMATO + MÓDULOS FUSIONADOS
-        ============================================ */
-        .formato-modules-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .formato-box, .modules-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 36px;
-        }
-
-        .formato-box h3, .modules-box h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--accent-neon);
-        }
-
-        .timeline-mini {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline-mini::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent-neon), var(--accent-purple));
-            opacity: 0.3;
-        }
-
-        .timeline-mini-item {
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .timeline-mini-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-mini-dot {
-            position: absolute;
-            left: -26px;
-            top: 4px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--accent-neon);
-            box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
-        }
-
-        .timeline-mini-item.online .timeline-mini-dot {
-            background: var(--accent-purple);
-            box-shadow: 0 0 10px rgba(131, 56, 236, 0.5);
-        }
-
-        .timeline-mini-item h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 4px;
-        }
-
-        .timeline-mini-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .tag-mini {
-            display: inline-block;
-            font-size: 10px;
-            text-transform: uppercase;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 50px;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
-
-        .tag-presencial-mini {
-            background: rgba(0, 245, 212, 0.1);
-            color: var(--accent-neon);
-            border: 1px solid rgba(0, 245, 212, 0.3);
-        }
-
-        .tag-online-mini {
-            background: rgba(131, 56, 236, 0.1);
-            color: var(--accent-purple);
-            border: 1px solid rgba(131, 56, 236, 0.3);
-        }
-
-        .modules-list {
-            list-style: none;
-        }
-
-        .modules-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .modules-list li:last-child {
-            border-bottom: none;
-        }
-
-        .modules-list li::before {
-            content: '✦';
-            color: var(--accent-neon);
-            font-size: 16px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .modules-list strong {
-            display: block;
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 2px;
-        }
-
-        .modules-list span {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        .meta-info-strip {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 32px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px dashed var(--border-color);
-            border-radius: 16px;
-            font-size: 0.9rem;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-light);
-        }
-
-        .meta-item svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--accent-neon);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        /* ============================================
-           FAQ SECTION
-        ============================================ */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-        }
-
-        .faq-item:hover {
-            border-color: rgba(0, 245, 212, 0.2);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            padding: 20px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--font-body);
-            transition: var(--transition-smooth);
-        }
-
-        .faq-question:hover {
-            color: var(--accent-neon);
-        }
-
-        .faq-question svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--accent-neon);
-            stroke-width: 2;
-            fill: none;
-            transition: transform var(--transition-smooth);
-            flex-shrink: 0;
-            margin-left: 16px;
-        }
-
-        .faq-item.active .faq-question svg {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height var(--transition-smooth);
-        }
-
-        .faq-answer-content {
-            padding: 0 24px 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
-
-        /* ============================================
-           SECCIÓN DE REGISTRO
-        ============================================ */
-        .register-box {
-            position: relative;
-            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05) 0%, rgba(131, 56, 236, 0.05) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 32px;
-            padding: 64px 40px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .register-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-mesh);
-            opacity: 0.5;
-        }
-
-        .register-box > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .register-box h2 {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 700;
-            margin: 24px 0 16px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .action-buttons-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin: 40px 0 24px;
-        }
-
-        .btn-premium {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 15px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-premium::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .btn-premium:hover::before {
-            left: 100%;
-        }
-
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
-        }
-
-        .btn-mail {
-            background: var(--gradient-primary);
-            color: var(--bg-dark);
-            box-shadow: 0 8px 24px rgba(0, 245, 212, 0.3);
-        }
-
-        .btn-mail:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 245, 212, 0.5);
-        }
-
-        .btn-premium svg {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
-            fill: none;
-            stroke: currentColor;
-        }
-
-        /* ============================================
-           STICKY CTA MOBILE
-        ============================================ */
-        .sticky-cta {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 999;
-            display: none;
-            width: calc(100% - 40px);
-            max-width: 400px;
-        }
-
-        .sticky-cta.visible {
-            display: block;
-            animation: slideUp 0.4s ease;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-            to { transform: translateX(-50%) translateY(0); opacity: 1; }
-        }
-
-        .sticky-cta a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background: var(--gradient-primary);
-            color: var(--bg-dark);
-            padding: 16px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            box-shadow: 0 8px 32px rgba(0, 245, 212, 0.4);
-            transition: var(--transition-smooth);
-        }
-
-        .sticky-cta a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0, 245, 212, 0.6);
-        }
-
-        .sticky-cta a svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        /* ============================================
-           FOOTER
-        ============================================ */
-        footer {
-            background: #060911;
-            padding: 60px 0 30px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-display);
-            color: var(--text-light);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .footer-col p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            line-height: 1.7;
-        }
-
-        .logo-footer {
-            height: 60px;
-            width: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
-        }
-
-        .social-links-container {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .social-icon-premium {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            transition: var(--transition-smooth);
-            text-decoration: none;
-        }
-
-        .social-icon-premium:hover {
-            color: var(--accent-neon);
-            background: rgba(0, 245, 212, 0.05);
-            border-color: var(--accent-neon);
-            transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 245, 212, 0.3);
-        }
-
-        .social-icon-premium svg {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
-            fill: none;
-            stroke: currentColor;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .footer-bottom p:first-child {
-            color: var(--accent-neon);
-            font-style: italic;
-            font-size: 1rem;
-            margin-bottom: 16px;
-        }
-
-        /* ============================================
-           ANIMACIONES DE SCROLL
-        ============================================ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ============================================
-           RESPONSIVE
-        ============================================ */
-        @media (max-width: 968px) {
-            .formato-modules-container {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .tallerista-card {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                padding: 32px;
-            }
-
-            .tallerista-image-wrapper {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 140px 0 60px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .nav-wrapper {
-                padding: 10px 16px;
-            }
-
-            .logo-nav {
-                height: 90px;
-            }
-
-            .btn-nav {
-                padding: 8px 16px;
-                font-size: 13px;
-            }
-
-            .para-quien-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .tallerista-content h2 {
-                font-size: 2rem;
-            }
-
-            .formato-box, .modules-box {
-                padding: 28px 24px;
-            }
-
-            .register-box {
-                padding: 48px 24px;
-            }
-
-            .action-buttons-group {
-                flex-direction: column;
-            }
-
-            .btn-premium {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .meta-info-strip {
-                flex-direction: column;
-                gap: 12px;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .logo-nav {
-                height: 75px;
-            }
-
-            .sticky-cta {
-                bottom: 12px;
-                width: calc(100% - 24px);
-            }
-        }
-
-        /* ============================================
-           ACCESIBILIDAD
-        ============================================ */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        *:focus-visible {
-            outline: 2px solid var(--accent-neon);
-            outline-offset: 4px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Historia, Mi Marca | Academia de la Vida</title>
+<meta name="description" content="Taller gratuito de identidad y soberanía digital para adultos mayores. 3 semanas en Centro Cultural Matta Sur, Santiago.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mi Historia, Mi Marca | Academia de la Vida">
+<meta property="og:description" content="Construye tu identidad digital con seguridad. Programa gratuito para adultos mayores en Centro Cultural Matta Sur.">
+<meta property="og:image" content="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1">
+<meta property="og:locale" content="es_CL">
+<link rel="icon" type="image/png" href="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=32%2C32&ssl=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg-dark:#060606;--bg-card:#0d0d0d;--green:#06FF23;--text-light:#f4f4f4;--text-muted:#a8a8a8;--gradient-primary:linear-gradient(135deg,#06FF23 0%,#04b818 100%);--gradient-mesh:radial-gradient(at 0% 0%,rgba(6,255,35,0.08) 0px,transparent 50%),radial-gradient(at 100% 0%,rgba(6,255,35,0.05) 0px,transparent 50%),radial-gradient(at 100% 100%,rgba(255,255,255,0.04) 0px,transparent 50%),radial-gradient(at 0% 100%,rgba(6,255,35,0.05) 0px,transparent 50%);--font-display:'Orbitron',sans-serif;--font-body:'Space Mono',monospace;--transition-smooth:0.4s cubic-bezier(0.16,1,0.3,1);--shadow-glow:0 0 40px rgba(6,255,35,0.12);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:100px;}
+body{background-color:var(--bg-dark);color:var(--text-light);font-family:var(--font-body);font-size:16px;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px;}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(6,6,6,0.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(6,255,35,0.15);transition:var(--transition-smooth);}
+nav.scrolled{background:rgba(6,6,6,0.97);box-shadow:0 4px 30px rgba(0,0,0,0.4);}
+.nav-wrapper{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo-nav{height:54px;width:auto;filter:drop-shadow(0 0 10px rgba(6,255,35,0.3));}
+.btn-nav{display:inline-flex;align-items:center;gap:8px;background:var(--gradient-primary);color:#000;text-decoration:none;padding:12px 26px;border-radius:50px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:var(--transition-smooth);box-shadow:0 4px 20px rgba(6,255,35,0.25);}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(6,255,35,0.4);}
+header{position:relative;padding:170px 0 90px;text-align:center;overflow:hidden;background:var(--gradient-mesh);}
+header::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(6,255,35,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(6,255,35,0.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);}
+.hero-content{position:relative;z-index:2;}
+.badge-premium{display:inline-flex;align-items:center;gap:8px;background:rgba(6,255,35,0.08);border:1px solid rgba(6,255,35,0.3);color:var(--green);padding:8px 20px;border-radius:50px;font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;}
+header h1{font-family:var(--font-display);font-size:clamp(2.4rem,8vw,4.2rem);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:14px;color:#fff;}
+header h1 span{color:var(--green);}
+.subtitle-hero{font-family:var(--font-display);color:var(--text-muted);font-size:clamp(1.1rem,3vw,1.5rem);font-weight:500;margin-bottom:24px;letter-spacing:2px;}
+.desc-hero{max-width:680px;margin:0 auto 40px;color:var(--text-muted);font-size:clamp(1rem,2vw,1.1rem);line-height:1.9;}
+.btn-action{position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--gradient-primary);color:#000;text-decoration:none;padding:18px 38px;border-radius:50px;font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:1px;box-shadow:0 8px 32px rgba(6,255,35,0.3);transition:var(--transition-smooth);}
+.btn-action:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(6,255,35,0.45);}
+.dna-row{display:flex;align-items:center;gap:4px;margin-top:56px;max-width:760px;margin-left:auto;margin-right:auto;flex-wrap:wrap;justify-content:center;}
+.dna-node{display:flex;flex-direction:column;align-items:center;min-width:90px;}
+.dna-dot{width:16px;height:16px;border-radius:50%;background:var(--green);margin-bottom:10px;box-shadow:0 0 12px rgba(6,255,35,0.5);}
+.dna-label{font-family:var(--font-display);font-size:10px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;}
+.dna-line{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--green) 0 8px,transparent 8px 16px);min-width:24px;opacity:0.5;}
+section{padding:90px 0;position:relative;}
+section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(6,255,35,0.15),transparent);}
+.section-header{text-align:center;margin-bottom:52px;}
+.section-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(6,255,35,0.08);border:1px solid rgba(6,255,35,0.25);color:var(--green);padding:6px 16px;border-radius:50px;font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+section h2{font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;letter-spacing:-0.5px;margin-bottom:16px;color:#fff;}
+.section-desc{color:var(--text-muted);font-size:clamp(1rem,2vw,1.1rem);max-width:600px;margin:0 auto;line-height:1.9;}
+.para-quien-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px;}
+.para-quien-card{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--green);border-radius:16px;padding:32px 24px;text-align:left;transition:var(--transition-smooth);}
+.para-quien-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,0.4),var(--shadow-glow);border-color:rgba(6,255,35,0.2);}
+.para-quien-card h3{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--text-light);margin-bottom:12px;}
+.para-quien-card p{color:var(--text-muted);font-size:1rem;line-height:1.8;}
+.tallerista-card{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;background:linear-gradient(135deg,rgba(13,13,13,0.9) 0%,rgba(6,6,6,0.95) 100%);border:1px solid rgba(6,255,35,0.2);border-radius:28px;padding:48px;box-shadow:0 20px 60px rgba(0,0,0,0.4),var(--shadow-glow);}
+.tallerista-image-wrapper{position:relative;}
+.tallerista-image{width:100%;height:auto;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:3px solid rgba(6,255,35,0.25);}
+.tallerista-badge{position:absolute;bottom:-10px;right:-10px;background:var(--gradient-primary);color:#000;padding:10px 20px;border-radius:50px;font-family:var(--font-display);font-weight:900;font-size:0.8rem;box-shadow:0 4px 15px rgba(6,255,35,0.4);}
+.tallerista-label{display:inline-flex;align-items:center;gap:8px;background:rgba(6,255,35,0.08);border:1px solid rgba(6,255,35,0.3);color:var(--green);padding:6px 16px;border-radius:50px;font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+.tallerista-content h2{font-family:var(--font-display);font-size:2.2rem;font-weight:900;margin-bottom:8px;color:#fff;}
+.tallerista-role{color:var(--text-muted);font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:22px;letter-spacing:0.5px;}
+.tallerista-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:24px;}
+.tallerista-credentials{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;}
+.credential-tag{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);padding:8px 16px;border-radius:50px;font-size:0.9rem;}
+.btn-tallerista{display:inline-flex;align-items:center;gap:12px;background:transparent;color:var(--green);text-decoration:none;padding:14px 30px;border:2px solid var(--green);border-radius:50px;font-family:var(--font-display);font-weight:700;font-size:14px;transition:var(--transition-smooth);}
+.btn-tallerista:hover{background:var(--green);color:#000;transform:translateY(-2px);}
+.formato-modules-container{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.formato-box,.modules-box{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:24px;padding:36px;}
+.formato-box h3,.modules-box h3{font-family:var(--font-display);font-size:1.4rem;font-weight:900;margin-bottom:24px;color:var(--green);}
+.timeline-mini{position:relative;padding-left:30px;}
+.timeline-mini::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--green);opacity:0.25;}
+.timeline-mini-item{position:relative;padding-bottom:22px;}
+.timeline-mini-item:last-child{padding-bottom:0;}
+.timeline-mini-dot{position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(6,255,35,0.5);}
+.timeline-mini-item.online .timeline-mini-dot{background:transparent;border:2px solid #fff;box-shadow:none;}
+.timeline-mini-item h4{font-size:1.05rem;font-weight:700;color:var(--text-light);margin-bottom:5px;}
+.timeline-mini-item p{font-size:0.95rem;color:var(--text-muted);line-height:1.7;}
+.tag-mini{display:inline-block;font-family:var(--font-display);font-size:10px;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:6px;letter-spacing:0.5px;}
+.tag-presencial-mini{background:rgba(6,255,35,0.1);color:var(--green);border:1px solid rgba(6,255,35,0.3);}
+.tag-online-mini{background:rgba(255,255,255,0.06);color:#fff;border:1px solid rgba(255,255,255,0.2);}
+.modules-list{list-style:none;}
+.modules-list li{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.modules-list li:last-child{border-bottom:none;}
+.modules-list li::before{content:'\2726';color:var(--green);font-size:15px;flex-shrink:0;margin-top:3px;}
+.modules-list strong{display:block;color:var(--text-light);font-size:1rem;margin-bottom:3px;}
+.modules-list span{color:var(--text-muted);font-size:0.92rem;line-height:1.6;}
+.meta-info-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:32px;padding:22px;background:rgba(255,255,255,0.02);border:1px dashed rgba(255,255,255,0.12);border-radius:16px;font-size:0.95rem;}
+.meta-item{display:flex;align-items:center;gap:8px;color:var(--text-light);}
+.faq-container{max-width:800px;margin:0 auto;}
+.faq-item{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:16px;margin-bottom:16px;overflow:hidden;transition:var(--transition-smooth);}
+.faq-item:hover{border-color:rgba(6,255,35,0.2);}
+.faq-question{width:100%;background:none;border:none;color:var(--text-light);padding:22px 26px;font-size:1.05rem;font-weight:700;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-body);}
+.faq-question:hover{color:var(--green);}
+.faq-question span{color:var(--green);font-size:20px;flex-shrink:0;margin-left:16px;transition:transform var(--transition-smooth);}
+.faq-item.active .faq-question span{transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height var(--transition-smooth);}
+.faq-answer-content{padding:0 26px 22px;color:var(--text-muted);font-size:1rem;line-height:1.8;}
+.faq-item.active .faq-answer{max-height:320px;}
+.register-box{position:relative;background:linear-gradient(135deg,rgba(6,255,35,0.04) 0%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(6,255,35,0.15);border-radius:32px;padding:64px 40px;text-align:center;}
+.register-box h2{font-family:var(--font-display);font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;margin:24px 0 16px;color:#fff;}
+.action-buttons-group{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:40px 0 24px;}
+.btn-premium{display:inline-flex;align-items:center;gap:12px;padding:16px 32px;border-radius:50px;font-family:var(--font-display);font-weight:900;font-size:14px;letter-spacing:0.5px;text-decoration:none;transition:var(--transition-smooth);}
+.btn-whatsapp{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;box-shadow:0 8px 24px rgba(37,211,102,0.3);}
+.btn-whatsapp:hover{transform:translateY(-4px);}
+.btn-mail{background:var(--gradient-primary);color:#000;box-shadow:0 8px 24px rgba(6,255,35,0.3);}
+.btn-mail:hover{transform:translateY(-4px);}
+.sticky-cta{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;display:none;width:calc(100% - 40px);max-width:400px;}
+.sticky-cta.visible{display:block;}
+.sticky-cta a{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--gradient-primary);color:#000;padding:16px 24px;border-radius:50px;text-decoration:none;font-family:var(--font-display);font-weight:900;font-size:14px;box-shadow:0 8px 32px rgba(6,255,35,0.4);}
+footer{background:#020202;padding:60px 0 30px;border-top:1px solid rgba(6,255,35,0.1);}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:48px;margin-bottom:40px;}
+.footer-col h4{font-family:var(--font-display);color:var(--text-light);font-size:1.05rem;font-weight:700;margin-bottom:20px;}
+.footer-col p{color:var(--text-muted);font-size:0.95rem;margin-bottom:12px;line-height:1.8;}
+.logo-footer{height:50px;width:auto;margin-bottom:20px;}
+.social-links-container{display:flex;gap:12px;margin-top:16px;}
+.social-icon-premium{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);text-decoration:none;font-size:18px;transition:var(--transition-smooth);}
+.social-icon-premium:hover{color:var(--green);border-color:var(--green);transform:translateY(-3px);}
+.footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:30px;}
+.footer-bottom p{color:var(--text-muted);font-size:0.95rem;margin-bottom:8px;}
+.footer-bottom p:first-child{color:var(--green);font-style:italic;font-size:1.05rem;margin-bottom:16px;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+@media(max-width:968px){.formato-modules-container{grid-template-columns:1fr;gap:32px;}.tallerista-card{grid-template-columns:1fr;gap:32px;padding:32px;}.tallerista-image-wrapper{max-width:280px;margin:0 auto;}}
+@media(max-width:768px){header{padding:130px 0 60px;}section{padding:60px 0;}.logo-nav{height:40px;}.para-quien-grid{grid-template-columns:1fr;}.register-box{padding:44px 22px;}.action-buttons-group{flex-direction:column;}.btn-premium{width:100%;justify-content:center;}.footer-grid{grid-template-columns:1fr;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0.01ms !important;}}
+*:focus-visible{outline:2px solid var(--green);outline-offset:4px;}
+</style>
 </head>
 <body>
-
-    <!-- Navegación -->
-    <nav role="navigation" aria-label="Navegación principal">
-        <div class="nav-wrapper">
-            <a href="#" aria-label="Inicio">
-                <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2026/04/LOGO-ACADEMIA-DE-LA-VIDA.png?w=886&ssl=1" alt="Academia de la Vida" class="logo-nav">
-            </a>
-            <a href="#inscripcion" class="btn-nav">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13 12H3"/>
-                </svg>
-                Postular Gratis
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header role="banner">
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge-premium">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                    </svg>
-                    Programa Académico Gratuito
-                </span>
-                <h1>TU MARCA PERSONAL</h1>
-                <p class="subtitle-hero">Experiencia que Trasciende</p>
-                <p class="desc-hero">
-                    Construye tu identidad digital con soberanía y seguridad. Un espacio de alta fidelidad metodológica diseñado especialmente para adultos mayores en el Centro Cultural Matta Sur.
-                </p>
-                <a href="#inscripcion" class="btn-action">
-                    INICIAR MI POSTULACIÓN
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12 5 19 12 12 19"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ¿Para quién es? -->
-    <section id="para-quien">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                        <circle cx="12" cy="7" r="4"/>
-                    </svg>
-                    ¿Para quién es este taller?
-                </span>
-                <h2>Diseñado para ti si...</h2>
-                <p class="section-desc">Este programa es ideal si te identificas con alguna de estas situaciones</p>
-            </div>
-            
-            <div class="para-quien-grid">
-                <div class="para-quien-card reveal">
-                    <div class="para-quien-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3>Quieres proteger tus datos</h3>
-                    <p>Te preocupa la seguridad en WhatsApp, Facebook y otras plataformas, y quieres aprender a navegar sin riesgos.</p>
-                </div>
-
-                <div class="para-quien-card reveal">
-                    <div class="para-quien-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
-                    </div>
-                    <h3>Quieres compartir tu historia</h3>
-                    <p>Tienes una vida de experiencias valiosas y quieres aprender a comunicarlas al mundo digital con confianza.</p>
-                </div>
-
-                <div class="para-quien-card reveal">
-                    <div class="para-quien-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="8" x2="12" y2="12"/>
-                            <line x1="12" y1="16" x2="12.01" y2="16"/>
-                        </svg>
-                    </div>
-                    <h3>Pierdes el miedo a la tecnología</h3>
-                    <p>Sientes que la tecnología avanza muy rápido y quieres acompañar ese ritmo con autonomía y seguridad.</p>
-                </div>
-
-                <div class="para-quien-card reveal">
-                    <div class="para-quien-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>Buscas comunidad y conexión</h3>
-                    <p>Quieres ser parte de un grupo de personas con intereses similares y construir redes de apoyo digital.</p>
-                </div>
-
-                <div class="para-quien-card reveal">
-                    <div class="para-quien-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Quieres dejar un legado</h3>
-                    <p>Te interesa que tu experiencia y sabiduría trascienda y sea útil para las nuevas generaciones.</p>
-                </div>
-
-                <div class="para-quien-card reveal">
-                    <div class="para-quien-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
-                        </svg>
-                    </div>
-                    <h3>Buscas aprender haciendo</h3>
-                    <p>Prefieres un formato práctico donde puedas aplicar lo aprendido de inmediato en tu vida diaria.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tallerista Astromykos -->
-    <section class="tallerista-section">
-        <div class="container">
-            <div class="tallerista-card reveal">
-                <div class="tallerista-image-wrapper">
-                    <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1" alt="Astromykos - Tallerista" class="tallerista-image">
-                    <span class="tallerista-badge">Tallerista Principal</span>
-                </div>
-                <div class="tallerista-content">
-                    <span class="tallerista-label">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                        Tu Guía en este Viaje
-                    </span>
-                    <h2>Astromykos</h2>
-                    <p class="tallerista-role">Piloto de la nave de Lost Astronauta SpA</p>
-                    <p>Más de 25 años de trayectoria en las industrias creativas. Tutor validado por el Ministerio de Educación de Chile.</p>
-                    
-                    <div class="tallerista-credentials">
-                        <span class="credential-tag">
-                            <svg viewBox="0 0 24 24">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                            </svg>
-                            25+ años experiencia
-                        </span>
-                        <span class="credential-tag">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                <polyline points="22 4 12 14.01 9 11.01"/>
-                            </svg>
-                            Mineduc Validado
-                        </span>
-                        <span class="credential-tag">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                            Industrias Creativas
-                        </span>
-                    </div>
-
-                    <a href="https://lostastronauta.org/about/" target="_blank" rel="noopener noreferrer" class="btn-tallerista">
-                        Conoce más sobre Astromykos
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                            <polyline points="15 3 21 3 21 9"/>
-                            <line x1="10" y1="14" x2="21" y2="3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formato + Módulos Fusionados -->
-    <section id="programa">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Programa Completo
-                </span>
-                <h2>Formato y Contenido</h2>
-                <p class="section-desc">3 semanas de inmersión combinando lo mejor del aprendizaje presencial y online</p>
-            </div>
-            
-            <div class="formato-modules-container">
-                <div class="formato-box reveal">
-                    <h3> Formato Híbrido</h3>
-                    <div class="timeline-mini">
-                        <div class="timeline-mini-item">
-                            <div class="timeline-mini-dot"></div>
-                            <span class="tag-mini tag-presencial-mini">Presencial</span>
-                            <h4>Sábado 1: Identidad y Propósito</h4>
-                            <p>Rescate biográfico y definición de tu propósito digital.</p>
-                        </div>
-                        
-                        <div class="timeline-mini-item online">
-                            <div class="timeline-mini-dot"></div>
-                            <span class="tag-mini tag-online-mini">Online</span>
-                            <h4>Sesión 1: Arquitectura de Perfiles</h4>
-                            <p>Optimización y blindaje de WhatsApp y Facebook.</p>
-                        </div>
-                        
-                        <div class="timeline-mini-item">
-                            <div class="timeline-mini-dot"></div>
-                            <span class="tag-mini tag-presencial-mini">Presencial</span>
-                            <h4>Sábado 2: Discurso y Estrategia</h4>
-                            <p>Storytelling y presentación de impacto en 1 minuto.</p>
-                        </div>
-                        
-                        <div class="timeline-mini-item online">
-                            <div class="timeline-mini-dot"></div>
-                            <span class="tag-mini tag-online-mini">Online</span>
-                            <h4>Sesión 2: Soberanía Digital</h4>
-                            <p>Detección de estafas, contraseñas e IA asistiva.</p>
-                        </div>
-                        
-                        <div class="timeline-mini-item">
-                            <div class="timeline-mini-dot"></div>
-                            <span class="tag-mini tag-presencial-mini">Presencial</span>
-                            <h4>Sábado 3: Cierre y Certificación</h4>
-                            <p>Presentación final y entrega de certificados.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modules-box reveal">
-                    <h3>🎯 Los 6 Módulos ADN</h3>
-                    <ul class="modules-list">
-                        <li>
-                            <div>
-                                <strong>Identidad</strong>
-                                <span>Descubre tu historia única como activo estratégico.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>Propósito</strong>
-                                <span>Define qué legado quieres dejar en el ecosistema digital.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>Discurso</strong>
-                                <span>Comunica tu valor de forma auténtica y poderosa.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>Esencia</strong>
-                                <span>Identifica tus habilidades transferibles e irrepetibles.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>Branding</strong>
-                                <span>Configura tu presencia digital con control y privacidad.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>Posición</strong>
-                                <span>Encuentra los canales ideales para compartir tu saber.</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="meta-info-strip reveal">
-                <div class="meta-item">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                    <span><strong>3 Semanas</strong> Intensivas</span>
-                </div>
-                <div class="meta-item">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/>
-                        <line x1="8" y1="2" x2="8" y2="6"/>
-                        <line x1="3" y1="10" x2="21" y2="10"/>
-                    </svg>
-                    <span>Sábados <strong>10:00 - 12:00 hrs</strong></span>
-                </div>
-                <div class="meta-item">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    <span><strong>Centro Cultural Matta Sur</strong>, Santiago</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                        <line x1="12" y1="17" x2="12.01" y2="17"/>
-                    </svg>
-                    Preguntas Frecuentes
-                </span>
-                <h2>Resolvemos tus dudas</h2>
-                <p class="section-desc">Todo lo que necesitas saber antes de postularte</p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        ¿El taller es realmente gratuito?
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Sí, el taller es completamente gratuito. Es una iniciativa de la Academia de la Vida y Lost Astronauta en alianza con el Centro Cultural Matta Sur, orientada a la inclusión digital de adultos mayores.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        ¿Necesito tener conocimientos previos de tecnología?
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            No. El taller está diseñado para todos los niveles, desde quienes nunca han usado un smartphone hasta quienes ya tienen experiencia básica. Nos adaptamos a tu ritmo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        ¿Qué necesito para participar en las sesiones online?
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Solo necesitas un smartphone, tablet o computador con conexión a internet. Te enviaremos el enlace de Zoom antes de cada sesión online. Si tienes dificultades técnicas, te ayudamos a resolverlas.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        ¿Recibiré algún material o certificado?
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Sí. Recibirás material de clase (guías prácticas, ejercicios y plantillas) y un certificado de participación al completar el taller. Todo el material es tuyo para usar durante y después del programa.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        ¿Cuántos cupos hay disponibles?
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            El taller tiene un cupo limitado de 20 participantes para garantizar un acompañamiento personalizado y de calidad. Te recomendamos postularte pronto.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        ¿Qué pasa si no puedo asistir a alguna sesión?
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Entendemos que pueden surgir imprevistos. Las sesiones online quedan grabadas y el material se comparte por WhatsApp. Para las sesiones presenciales, te recomendamos avisar con anticipación.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Inscripción -->
-    <section id="inscripcion">
-        <div class="container">
-            <div class="register-box reveal">
-                <span class="badge-premium" style="border-color: rgba(58,134,255,0.3); color: var(--accent-blue); background: rgba(58,134,255,0.08);">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                    </svg>
-                    Cupo Limitado a 20 Participantes
-                </span>
-                <h2>Asegura tu Espacio en la Academia</h2>
-                <p class="desc-hero" style="margin-bottom: 0;">
-                    Inicia tu proceso de postulación gratuito hoy mismo. Tu historia y experiencia merecen ser compartidas con total autonomía y seguridad.
-                </p>
-                
-                <div class="action-buttons-group">
-                    <a href="https://wa.me/56975693952?text=Hola%20Academia%20de%20la%20Vida%2C%20quiero%20postular%20al%20Taller%20Gratuito%20de%20Soberan%C3%ADa%20Digital%20en%20Matta%20Sur." target="_blank" rel="noopener noreferrer" class="btn-premium btn-whatsapp">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                        </svg>
-                        Postular por WhatsApp
-                    </a>
-                    
-                    <a href="mailto:info@lostastronauta.org?cc=lost.astronauta@gmail.com&subject=Inscripci%C3%B3n%20Taller%20Soberan%C3%ADa%20Digital&body=Hola%20Equipo%20de%20Lost%20Astronauta%2C%20me%20gustar%C3%ADa%20inscribirme%20en%20el%20taller%20para%20adultos%20mayores.%0A%0AMis%20datos%20de%20contacto%20son%3A%0A-%20Nombre%20Completo%3A%0A-%20Edad%3A%0A-%20%C2%BFDispengo%20de%20un%20tel%C3%A9fono%20Inteligente%3F%20(S%C3%AD%20%2F%20No)%3A%0A%0A%C2%A1Muchas%20gracias!" class="btn-premium btn-mail">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        Postular por Correo
-                    </a>
-                </div>
-                
-                <p style="font-size: 14px; color: var(--text-muted); margin: 0;">
-                    Consultas directas: <strong style="color: var(--accent-neon);">info@lostastronauta.org</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=320%2C296&ssl=1&resize=320%2C296" alt="Lost Astronauta" class="logo-footer">
-                    <p>Un despliegue de innovación educativa, identidad transmedia y rescate biográfico en el tercer planeta.</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Canales Oficiales</h4>
-                    <p>📧 info@lostastronauta.org</p>
-                    <p>📧 lost.astronauta@gmail.com</p>
-                    <p>📞 +56 9 7569 3952</p>
-                    <p>📍 Santiago, Chile</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Ecosistema de Redes</h4>
-                    <p>Sigue las misiones y actualizaciones de nuestras marcas:</p>
-                    <div class="social-links-container">
-                        <a href="https://instagram.com/lostastronauta" target="_blank" rel="noopener noreferrer" class="social-icon-premium" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                            </svg>
-                        </a>
-                        <a href="https://youtube.com/@lostastronauta" target="_blank" rel="noopener noreferrer" class="social-icon-premium" aria-label="YouTube">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>"La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad."</p>
-                <p>&copy; 2026 Lost Astronauta & Academia de la Vida. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Sticky CTA Mobile -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="#inscripcion">
-            <svg viewBox="0 0 24 24">
-                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13 12H3"/>
-            </svg>
-            Postular Gratis Ahora
-        </a>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Cerrar todos
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                
-                // Abrir el clickeado si no estaba activo
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                    button.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        // Sticky CTA en mobile
-        const stickyCta = document.getElementById('stickyCta');
-        const inscripcionSection = document.getElementById('inscripcion');
-        
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const inscripcionTop = inscripcionSection.getBoundingClientRect().top + scrollY;
-            
-            // Mostrar sticky CTA después de 600px de scroll y antes de la sección de inscripción
-            if (scrollY > 600 && scrollY + windowHeight < inscripcionTop + 200) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-        });
-
-        // Scroll reveal animations
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealOnScroll = () => {
-            revealElements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 100;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    el.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-
-        // Nav scroll effect
-        const nav = document.querySelector('nav');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+<nav role="navigation" aria-label="Navegación principal">
+<div class="nav-wrapper">
+<a href="#" aria-label="Inicio"><img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2026/04/LOGO-ACADEMIA-DE-LA-VIDA.png?w=886&ssl=1" alt="Academia de la Vida" class="logo-nav"></a>
+<a href="#inscripcion" class="btn-nav">Postular gratis</a>
+</div>
+</nav>
+<header role="banner">
+<div class="container">
+<div class="hero-content">
+<span class="badge-premium">Taller gratuito</span>
+<h1>MI HISTORIA,<br><span>MI MARCA</span></h1>
+<p class="subtitle-hero">Tu historia merece contarse bien</p>
+<p class="desc-hero">Construye tu identidad digital con confianza y seguridad. Un espacio pensado especialmente para adultos mayores, en el Centro Cultural Matta Sur, sin tecnicismos y a tu propio ritmo.</p>
+<a href="#inscripcion" class="btn-action">Iniciar mi postulación</a>
+<div class="dna-row">
+<div class="dna-node"><div class="dna-dot"></div><div class="dna-label">Identidad</div></div>
+<div class="dna-line"></div>
+<div class="dna-node"><div class="dna-dot"></div><div class="dna-label">Propósito</div></div>
+<div class="dna-line"></div>
+<div class="dna-node"><div class="dna-dot"></div><div class="dna-label">Mi historia</div></div>
+<div class="dna-line"></div>
+<div class="dna-node"><div class="dna-dot"></div><div class="dna-label">Cómo me ven</div></div>
+<div class="dna-line"></div>
+<div class="dna-node"><div class="dna-dot"></div><div class="dna-label">Herramientas</div></div>
+<div class="dna-line"></div>
+<div class="dna-node"><div class="dna-dot"></div><div class="dna-label">Dónde aparezco</div></div>
+</div>
+</div>
+</div>
+</header>
+<section id="para-quien">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-badge">Para quién es este taller</span>
+<h2>Diseñado para ti si...</h2>
+<p class="section-desc">Este programa es para ti si te identificas con alguna de estas situaciones</p>
+</div>
+<div class="para-quien-grid">
+<div class="para-quien-card reveal"><h3>Quieres proteger tus datos</h3><p>Te preocupa la seguridad en WhatsApp y otras plataformas, y quieres aprender a navegar sin riesgos.</p></div>
+<div class="para-quien-card reveal"><h3>Quieres compartir tu historia</h3><p>Tienes una vida de experiencias valiosas y quieres aprender a contarlas con confianza.</p></div>
+<div class="para-quien-card reveal"><h3>Pierdes el miedo a la tecnología</h3><p>Sientes que todo avanza muy rápido y quieres acompañar ese ritmo con autonomía y seguridad.</p></div>
+<div class="para-quien-card reveal"><h3>Buscas comunidad y conexión</h3><p>Quieres ser parte de un grupo con intereses similares y construir redes de apoyo.</p></div>
+<div class="para-quien-card reveal"><h3>Quieres dejar un legado</h3><p>Te interesa que tu experiencia y sabiduría sea útil para las nuevas generaciones.</p></div>
+<div class="para-quien-card reveal"><h3>Aprendes haciendo</h3><p>Prefieres un formato práctico donde puedas aplicar lo aprendido de inmediato.</p></div>
+</div>
+</div>
+</section>
+<section>
+<div class="container">
+<div class="tallerista-card reveal">
+<div class="tallerista-image-wrapper">
+<img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2024/09/astromykos-ID.png?w=1600&ssl=1" alt="AstroMykos" class="tallerista-image">
+<span class="tallerista-badge">Tallerista principal</span>
+</div>
+<div class="tallerista-content">
+<span class="tallerista-label">Tu guía en este taller</span>
+<h2>AstroMykos</h2>
+<p class="tallerista-role">Director Creativo de Lost Astronauta</p>
+<p>25 años de trayectoria en las industrias creativas. Facilitador validado por el Ministerio de Educación de Chile.</p>
+<div class="tallerista-credentials">
+<span class="credential-tag">25+ años de experiencia</span>
+<span class="credential-tag">Mineduc validado</span>
+<span class="credential-tag">Industrias creativas</span>
+</div>
+<a href="https://lostastronauta.org/about/" target="_blank" rel="noopener noreferrer" class="btn-tallerista">Conoce más sobre AstroMykos</a>
+</div>
+</div>
+</div>
+</section>
+<section id="programa">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-badge">Programa completo</span>
+<h2>Cómo funciona</h2>
+<p class="section-desc">Encuentros presenciales combinados con acompañamiento sencillo entre sesiones</p>
+</div>
+<div class="formato-modules-container">
+<div class="formato-box reveal">
+<h3>Formato del taller</h3>
+<div class="timeline-mini">
+<div class="timeline-mini-item"><div class="timeline-mini-dot"></div><span class="tag-mini tag-presencial-mini">Presencial</span><h4>Sábado 1: Identidad y propósito</h4><p>Contamos tu historia y vemos qué quieres compartir con el mundo.</p></div>
+<div class="timeline-mini-item online"><div class="timeline-mini-dot"></div><span class="tag-mini tag-online-mini">Acompañado</span><h4>Sesión 1: Mi WhatsApp protegido</h4><p>Configuramos tu WhatsApp paso a paso, de forma simple y segura.</p></div>
+<div class="timeline-mini-item"><div class="timeline-mini-dot"></div><span class="tag-mini tag-presencial-mini">Presencial</span><h4>Sábado 2: Cómo cuento mi historia</h4><p>Aprendemos a contar quién eres en un minuto, sin enredarse.</p></div>
+<div class="timeline-mini-item online"><div class="timeline-mini-dot"></div><span class="tag-mini tag-online-mini">Acompañado</span><h4>Sesión 2: Soberanía digital</h4><p>Cómo reconocer estafas, cuidar tus contraseñas y perder el miedo a la inteligencia artificial.</p></div>
+<div class="timeline-mini-item"><div class="timeline-mini-dot"></div><span class="tag-mini tag-presencial-mini">Presencial</span><h4>Sábado 3: Cierre y certificación</h4><p>Presentamos lo construido y entregamos los certificados.</p></div>
+</div>
+</div>
+<div class="modules-box reveal">
+<h3>Tu ADN de marca</h3>
+<ul class="modules-list">
+<li><div><strong>Identidad</strong><span>Descubre tu historia, lo que te hace único.</span></div></li>
+<li><div><strong>Propósito</strong><span>Define qué quieres compartir y por qué te importa.</span></div></li>
+<li><div><strong>Discurso</strong><span>Aprende a contar quién eres, con tus propias palabras.</span></div></li>
+<li><div><strong>Esencia</strong><span>Reconoce lo que sabes hacer y lo que te hace distinto.</span></div></li>
+<li><div><strong>Cómo me ven</strong><span>Aprende a cuidar tu perfil y tu información en internet.</span></div></li>
+<li><div><strong>Dónde aparezco</strong><span>Encuentra dónde y cómo compartir lo tuyo.</span></div></li>
+</ul>
+</div>
+</div>
+<div class="meta-info-strip reveal">
+<div class="meta-item"><strong>3 semanas</strong>&nbsp;de duración</div>
+<div class="meta-item">Sábados&nbsp;<strong>10:00 - 12:00 hrs</strong></div>
+<div class="meta-item"><strong>Centro Cultural Matta Sur</strong>, Santiago</div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-badge">Preguntas frecuentes</span>
+<h2>Resolvemos tus dudas</h2>
+<p class="section-desc">Todo lo que necesitas saber antes de postularte</p>
+</div>
+<div class="faq-container">
+<div class="faq-item reveal"><button class="faq-question" aria-expanded="false">¿El taller es realmente gratuito?<span>+</span></button><div class="faq-answer"><div class="faq-answer-content">Sí, el taller es completamente gratuito. Es una alianza entre Academia de la Vida, Lost Astronauta y el Centro Cultural Matta Sur.</div></div></div>
+<div class="faq-item reveal"><button class="faq-question" aria-expanded="false">¿Necesito conocimientos previos de tecnología?<span>+</span></button><div class="faq-answer"><div class="faq-answer-content">No. El taller está pensado para todos los niveles, incluso si nunca has usado un teléfono inteligente. Vamos a tu ritmo.</div></div></div>
+<div class="faq-item reveal"><button class="faq-question" aria-expanded="false">¿Las sesiones online son por videollamada?<span>+</span></button><div class="faq-answer"><div class="faq-answer-content">No es obligatorio. Te enviamos instrucciones simples por WhatsApp, paso a paso y con fotos. Si necesitas ayuda, tienes un horario donde puedes llamarnos directamente.</div></div></div>
+<div class="faq-item reveal"><button class="faq-question" aria-expanded="false">¿Recibiré algún material o certificado?<span>+</span></button><div class="faq-answer"><div class="faq-answer-content">Sí. Recibirás tu certificado de participación, tu frase de identidad y tu foto de perfil lista para usar.</div></div></div>
+<div class="faq-item reveal"><button class="faq-question" aria-expanded="false">¿Cuántos cupos hay disponibles?<span>+</span></button><div class="faq-answer"><div class="faq-answer-content">El taller tiene cupo limitado a 20 participantes para garantizar un acompañamiento cercano y de calidad.</div></div></div>
+<div class="faq-item reveal"><button class="faq-question" aria-expanded="false">¿Qué pasa si no puedo asistir a alguna sesión?<span>+</span></button><div class="faq-answer"><div class="faq-answer-content">El contenido de las sesiones online queda guardado en el grupo de WhatsApp para revisarlo cuando puedas. Para las sesiones presenciales, te pedimos avisar con anticipación.</div></div></div>
+</div>
+</div>
+</section>
+<section id="inscripcion">
+<div class="container">
+<div class="register-box reveal">
+<span class="badge-premium">Cupo limitado a 20 participantes</span>
+<h2>Asegura tu espacio en la Academia</h2>
+<p class="desc-hero" style="margin-bottom:0;">Postula hoy mismo. Tu historia merece contarse con confianza y seguridad.</p>
+<div class="action-buttons-group">
+<a href="https://wa.me/56975693952?text=Hola%20Academia%20de%20la%20Vida%2C%20quiero%20postular%20al%20taller%20Mi%20Historia%20Mi%20Marca%20en%20Matta%20Sur." target="_blank" rel="noopener noreferrer" class="btn-premium btn-whatsapp">Postular por WhatsApp</a>
+<a href="mailto:info@lostastronauta.org?subject=Inscripci%C3%B3n%20Mi%20Historia%20Mi%20Marca&body=Hola%2C%20me%20gustar%C3%ADa%20inscribirme%20en%20el%20taller%20para%20adultos%20mayores.%0A%0AMis%20datos%3A%0A-%20Nombre%20completo%3A%0A-%20Edad%3A%0A-%20Dispongo%20de%20tel%C3%A9fono%20inteligente%20(S%C3%AD%20%2F%20No)%3A" class="btn-premium btn-mail">Postular por correo</a>
+</div>
+<p style="font-size:14px;color:var(--text-muted);margin:20px 0 0;">Consultas directas: <strong style="color:var(--green);">info@lostastronauta.org</strong></p>
+</div>
+</div>
+</section>
+<footer role="contentinfo">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<img src="https://i0.wp.com/lostastronauta.org/wp-content/uploads/2023/12/cropped-Recurso-7.png?fit=320%2C296&ssl=1&resize=320%2C296" alt="Lost Astronauta" class="logo-footer">
+<p>Un despliegue de innovación educativa, identidad transmedia y rescate biográfico en el tercer planeta.</p>
+</div>
+<div class="footer-col">
+<h4>Canales oficiales</h4>
+<p>info@lostastronauta.org</p>
+<p>+56 9 7569 3952</p>
+<p>Santiago, Chile</p>
+</div>
+<div class="footer-col">
+<h4>Ecosistema de redes</h4>
+<p>Sigue las misiones de Lost Astronauta:</p>
+<div class="social-links-container">
+<a href="https://instagram.com/lostastronauta" target="_blank" rel="noopener noreferrer" class="social-icon-premium" aria-label="Instagram">IG</a>
+<a href="https://youtube.com/@lostastronauta" target="_blank" rel="noopener noreferrer" class="social-icon-premium" aria-label="YouTube">YT</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>"La soberanía digital no es un lujo, es un derecho. Y los derechos no tienen edad."</p>
+<p>2026 Lost Astronauta y Academia de la Vida. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<div class="sticky-cta" id="stickyCta">
+<a href="#inscripcion">Postular gratis ahora</a>
+</div>
+<script>
+document.querySelectorAll('.faq-question').forEach(function(button){
+button.addEventListener('click',function(){
+var faqItem=button.parentElement;
+var isActive=faqItem.classList.contains('active');
+document.querySelectorAll('.faq-item').forEach(function(item){
+item.classList.remove('active');
+item.querySelector('.faq-question').setAttribute('aria-expanded','false');
+});
+if(!isActive){
+faqItem.classList.add('active');
+button.setAttribute('aria-expanded','true');
+}
+});
+});
+var stickyCta=document.getElementById('stickyCta');
+var inscripcionSection=document.getElementById('inscripcion');
+window.addEventListener('scroll',function(){
+var scrollY=window.scrollY;
+var windowHeight=window.innerHeight;
+var inscripcionTop=inscripcionSection.getBoundingClientRect().top+scrollY;
+if(scrollY>600&&scrollY+windowHeight<inscripcionTop+200){
+stickyCta.classList.add('visible');
+}else{
+stickyCta.classList.remove('visible');
+}
+});
+var revealElements=document.querySelectorAll('.reveal');
+function revealOnScroll(){
+revealElements.forEach(function(el){
+var elementTop=el.getBoundingClientRect().top;
+if(elementTop<window.innerHeight-100){
+el.classList.add('active');
+}
+});
+}
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
+var navEl=document.querySelector('nav');
+window.addEventListener('scroll',function(){
+if(window.scrollY>50){
+navEl.classList.add('scrolled');
+}else{
+navEl.classList.remove('scrolled');
+}
+});
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+anchor.addEventListener('click',function(e){
+e.preventDefault();
+var target=document.querySelector(this.getAttribute('href'));
+if(target){
+target.scrollIntoView({behavior:'smooth',block:'start'});
+}
+});
+});
+</script>
 </body>
 </html>
